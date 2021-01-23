@@ -1,13 +1,18 @@
 module.exports = {
   siteMetadata: {
-    title: "Gatsby + Netlify CMS Starter",
-    description:
-      "This repo contains an example business website that is built with Gatsby, and Netlify CMS.It follows the JAMstack architecture by using Git as a single source of truth, and Netlify for continuous deployment, and CDN distribution.",
+    name: "Garelochhead Community Council",
+    title: "Garelochhead Community Council | Official Website",
+    url: "https://garelochhead.info/",
+    description: "On these pages, we aim to offer easy access to the recent and current activities of the Garelochhead Community Council, as well as useful links to what’s happening in general in and around Garelochhead. Our features include: Business Listings, Past Meeting's Minutes and Current News.",
+    twitterUsername: "@GarelochheadCC",
+    locale: "en_GB"
   },
   flags: {
-    DEV_SSR: false
+    DEV_SSR: false,
+    FAST_REFRESH: true
   },
   plugins: [
+    "gatsby-plugin-styled-components",
     "gatsby-plugin-react-helmet",
     {
       // keep as first gatsby-source-filesystem plugin for gatsby image support
