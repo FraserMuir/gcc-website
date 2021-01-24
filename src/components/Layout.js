@@ -16,10 +16,10 @@ const StyledLayout = styled.div`
   }
 `;
 
-export const Layout = ({ children }) => {
+export const Layout = ({ preview, children }) => {
   return (
     <StyledLayout>
-      <SEO />
+      {!preview && <SEO />}
       <GlobalStyle />
       <Navbar />
       <main>{children}</main>

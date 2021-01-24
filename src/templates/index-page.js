@@ -4,20 +4,24 @@ import { graphql } from "gatsby";
 import { Layout } from "../components/Layout";
 import { Image } from "../components/Image";
 
-export const IndexPageTemplate = ({ image, title, content }) => (
-  <div>
-    <Image imageData={image} style={{ minHeight: "30vh", height: "100%", maxHeight: "31em", minWidth: "100vw" }} />
-    <h1>Title {title}</h1>
-    <p>Content {content}</p>
-  </div>
-);
-
+export const IndexPageTemplate = ({ image, main = {} }) => {
+  console.log(image);
+  return (
+    <div>
+      <Image imageData={image} style={{ minHeight: "30vh", height: "100%", maxHeight: "31em", minWidth: "100vw" }} />
+      <h1>{main.heading}</h1>
+      <p>{main.content}</p>
+      <i>{main.signature}</i>
+      <a href={main.link?.path}>{main.link?.text}</a>
+    </div>
+  );
+};
 const IndexPage = ({ data }) => {
   const { frontmatter } = data.markdownRemark;
 
   return (
     <Layout>
-      <IndexPageTemplate image={frontmatter.image} title={frontmatter.title} content={frontmatter.content} />
+      <IndexPageTemplate image={frontmatter.image} main={frontmatter.main} />
     </Layout>
   );
 };
@@ -25,10 +29,9 @@ const IndexPage = ({ data }) => {
 export default IndexPage;
 
 export const pageQuery = graphql`
-  query IndexPageTemplate {
-    markdownRemark(frontmatter: { templateKey: { eq: "index-page" } }) {
+  query IndexPageTemplate($slug: String) {
+    markdownRemark(fields: { slug: { eq: $slug } }) {
       frontmatter {
-        title
         image {
           childImageSharp {
             fluid(maxWidth: 2048, quality: 100) {
@@ -36,7 +39,15 @@ export const pageQuery = graphql`
             }
           }
         }
-        content
+        main {
+          content
+          heading
+          signature
+          link {
+            path
+            text
+          }
+        }
       }
     }
   }

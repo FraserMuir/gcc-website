@@ -10,7 +10,7 @@ import { fonts } from "../styles/fonts";
 export const Navbar = () => {
   return (
     <StyledNavbar role="navigation" aria-label="main-navigation">
-      <StyledLogo className="logo-container">
+      <StyledLogo className="logo-container" to="/">
         <img className="logo" src={logo} alt="GCC logo" />
         <div className="logo-text">
           <h2>Garelochhead</h2>
@@ -88,8 +88,9 @@ const StyledMenuButton = styled.label`
   }
 `;
 
-const StyledLogo = styled.div`
+const StyledLogo = styled(Link)`
   display: flex;
+  text-decoration: none;
   & > .logo {
     width: 4.5em;
     height: auto;
@@ -197,6 +198,7 @@ const StyledMenu = styled.div`
       font-weight: normal;
       text-transform: uppercase;
       margin: 0;
+      text-align: center;
     }
 
     &:before {

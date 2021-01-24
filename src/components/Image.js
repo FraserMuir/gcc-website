@@ -2,7 +2,7 @@ import React from 'react'
 import Img from 'gatsby-image'
 
 export const Image = ({ imageData, ...props }) => {
-  const { alt = '', childImageSharp, image } = imageData
+  const { alt = '', childImageSharp, image, url } = imageData
 
   if (!!image && !!image.childImageSharp) {
     return (
@@ -14,8 +14,13 @@ export const Image = ({ imageData, ...props }) => {
     return <Img fluid={childImageSharp.fluid} alt={alt} {...props} />
   }
 
-  if (!!image && typeof image === 'string')
-    return <img src={image} alt={alt} {...props} />
+  if (!!image && typeof image === 'string') {
+    return <Img fluid={{ src: url }} alt={alt} {...props} />
+  }
+  
+  if (!!url && typeof url === 'string') {
+    return <Img fluid={{ src: url }} alt={alt} {...props} />
+  }
 
   return null
 }
