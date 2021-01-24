@@ -5,10 +5,9 @@ import { Layout } from "../components/Layout";
 import { Image } from "../components/Image";
 
 export const IndexPageTemplate = ({ image, main = {} }) => {
-  console.log(image);
   return (
     <div>
-      <Image imageData={image} style={{ minHeight: "30vh", height: "100%", maxHeight: "31em", minWidth: "100vw" }} />
+      <Image imageData={image} style={{ minHeight: "30vh", height: "100%", maxHeight: "31em", minWidth: "100vw" }} className="blur" />
       <h1>{main.heading}</h1>
       <p>{main.content}</p>
       <i>{main.signature}</i>
@@ -34,7 +33,7 @@ export const pageQuery = graphql`
       frontmatter {
         image {
           childImageSharp {
-            fluid(maxWidth: 2048, quality: 100) {
+            fluid(maxWidth: 1500, quality: 40) {
               ...GatsbyImageSharpFluid
             }
           }

@@ -1,5 +1,5 @@
 ---
-templateKey: index-page
+templateKey: index
 title: Great coffee with a conscience
 image: /media/home.jpg
 content: We hold our coffee to the highest standards from the shrub to the cup.

@@ -18,4 +18,13 @@ export const GlobalStyle = createGlobalStyle`
   * {
     box-sizing: border-box;
   }
+  .gatsby-image-wrapper.blur:before {
+    content: "";
+    position: absolute;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(3px);
+    pointer-events: none;
+  }
 `;
