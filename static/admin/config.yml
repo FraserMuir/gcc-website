@@ -8,10 +8,20 @@ backend:
     uploadMedia: "[skip ci] Upload “{{path}}”"
     deleteMedia: "[skip ci] Delete “{{path}}”"
 
-media_folder: static/img
-public_folder: /img
+media_folder: static/media
+public_folder: /media
 
 collections:
+  - name: "widgets"
+    label: "Widgets"
+    files:
+      - file: "src/widgets/next-meeting.md"
+        label: "Next Meeting"
+        name: "next-meeting"
+        fields:
+          - { label: "Date", name: "date", widget: "datetime" }
+          - { label: "Location", name: "string", widget: "string" }
+          - { label: "Agenda", name: "agenda", widget: "file" }
   - name: "pages"
     label: "Pages"
     files:
