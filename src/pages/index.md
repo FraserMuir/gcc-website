@@ -7,7 +7,7 @@ content: We hold our coffee to the highest standards from the shrub to the cup.
   journey. We personally visit each farm to make sure the conditions are optimal
   for the plants, farmers and the local environment.
 main:
-  heading: this is the heading
+  heading: this is the heading!!
   content: this is the content
   signature: this is the signature!
   link:
