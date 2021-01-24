@@ -22,7 +22,7 @@ export const SEO = () => {
   const { name, url, title, locale, description, twitterUsername } = site.siteMetadata;
 
   return (
-    <Helmet title={title}>
+    <Helmet title={title} htmlAttributes={{ lang: "en" }}>
       <link rel="canonical" href={url} />
       <meta name="description" content={description} />
 

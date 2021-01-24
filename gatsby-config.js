@@ -2,7 +2,7 @@ module.exports = {
   siteMetadata: {
     name: "Garelochhead Community Council",
     title: "Garelochhead Community Council | Official Website",
-    url: "https://garelochhead.info/",
+    url: "https://hardcore-northcutt-08c153.netlify.app/",
     description: "On these pages, we aim to offer easy access to the recent and current activities of the Garelochhead Community Council, as well as useful links to what’s happening in general in and around Garelochhead. Our features include: Business Listings, Past Meeting's Minutes and Current News.",
     twitterUsername: "@GarelochheadCC",
     locale: "en_GB"
