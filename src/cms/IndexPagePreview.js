@@ -1,5 +1,5 @@
 import React from "react";
-import { frontmatterWrapper } from "./index";
+import { frontmatterWrapper } from "../helpers/frontmatterWrapper";
 
 import IndexPage from "../templates/index";
 

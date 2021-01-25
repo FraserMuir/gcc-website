@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { StyleSheetManager } from "styled-components";
-import { Layout } from "../components/Layout";
 
 function StyleInjector({ children }) {
   const [iframeRef, setIframeRef] = useState(null);
@@ -23,9 +22,7 @@ function StyleInjector({ children }) {
 export const withStyledComponentsRendered = (Comp) => {
   return (props) => (
     <StyleInjector>
-      <Layout preview>
-        <Comp {...props} />
-      </Layout>
+      <Comp {...props} />
     </StyleInjector>
   );
 };

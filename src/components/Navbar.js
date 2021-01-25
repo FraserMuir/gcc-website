@@ -11,7 +11,7 @@ export const Navbar = () => {
   return (
     <StyledNavbar role="navigation" aria-label="main-navigation">
       <StyledLogo className="logo-container" to="/">
-        <img className="logo" src={logo} alt="GCC logo" />
+        <img className="logo" src={logo} alt="GCC logo" width="4.5rem" height="4.5rem" />
         <div className="logo-text">
           <h2>Garelochhead</h2>
           <h3>Community Council</h3>
