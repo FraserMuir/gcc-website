@@ -1,7 +1,7 @@
 import React from 'react'
 import Img from 'gatsby-image'
 
-export const Image = ({ imageData, ...props }) => {
+export const Image = ({ imageData = {}, ...props }) => {
   const { alt = '', childImageSharp, image, url } = imageData
 
   if (!!image && !!image.childImageSharp) {

@@ -4,23 +4,17 @@ import { graphql } from "gatsby";
 import { Layout } from "../components/Layout";
 import { Image } from "../components/Image";
 
-export const IndexPageTemplate = ({ image, main = {} }) => {
+const IndexPage = ({ data: { markdownRemark: { frontmatter } }, preview }) => {
+  const { image, main } = frontmatter;
+
   return (
-    <div>
+    <Layout preview={preview}>
       <Image imageData={image} style={{ minHeight: "30vh", height: "100%", maxHeight: "31em", minWidth: "100vw" }} className="blur" />
       <h1>{main.heading}</h1>
       <p>{main.content}</p>
       <i>{main.signature}</i>
+      <Image imageData={main.image} style={{ minHeight: "30vh", height: "100%", maxHeight: "31em", minWidth: "100vw" }} className="blur" />
       <a href={main.link?.path}>{main.link?.text}</a>
-    </div>
-  );
-};
-const IndexPage = ({ data }) => {
-  const { frontmatter } = data.markdownRemark;
-
-  return (
-    <Layout>
-      <IndexPageTemplate image={frontmatter.image} main={frontmatter.main} />
     </Layout>
   );
 };

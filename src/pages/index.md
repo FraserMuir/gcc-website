@@ -10,6 +10,7 @@ main:
   heading: this is the heading
   content: this is the content
   signature: this is the signature!
+  image: /media/red.jpg
   link:
     text: to here
     path: /
