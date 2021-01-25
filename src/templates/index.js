@@ -9,11 +9,11 @@ const IndexPage = ({ data: { markdownRemark: { frontmatter } }, preview }) => {
 
   return (
     <Layout preview={preview}>
-      <Image imageData={image} style={{ minHeight: "30vh", height: "100%", maxHeight: "31em", minWidth: "100vw" }} className="blur" />
+      <Image heading imageData={image} />
       <h1>{main.heading}</h1>
       <p>{main.content}</p>
       <i>{main.signature}</i>
-      <Image imageData={main.image} style={{ minHeight: "30vh", height: "100%", maxHeight: "31em", minWidth: "100vw" }} className="blur" />
+      <Image heading imageData={main.image} />
       <a href={main.link?.path}>{main.link?.text}</a>
     </Layout>
   );
