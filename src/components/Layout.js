@@ -22,7 +22,7 @@ export const Layout = ({ preview, children }) => {
       {!preview && <SEO />}
       <GlobalStyle />
       <Navbar />
-      <main>{children}</main>
+      <main id="main">{children}</main>
       <Footer />
     </StyledLayout>
   );

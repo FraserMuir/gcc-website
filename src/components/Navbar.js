@@ -10,6 +10,7 @@ import { fonts } from "../styles/fonts";
 export const Navbar = () => {
   return (
     <StyledNavbar role="navigation" aria-label="main-navigation">
+      <StyledSkipLink href="#main">Skip to content</StyledSkipLink>
       <StyledLogo className="logo-container" to="/">
         <img className="logo" src={logo} alt="GCC logo" width="4.5rem" height="4.5rem" />
         <div className="logo-text">
@@ -17,10 +18,17 @@ export const Navbar = () => {
           <h3>Community Council</h3>
         </div>
       </StyledLogo>
+      <StyledMenuButton id="menu-button" htmlFor="menu-toggle" tabIndex={0}>
+        <span />
+        <span />
+        <span />
+      </StyledMenuButton>
       <StyledToggle id="menu-toggle" type="checkbox" />
       <StyledMenu id="menu">
         <div className="menu-item">
-          <div className="sub-heading">Meetings</div>
+          <div className="sub-heading" tabIndex={0} role="button">
+            Meetings
+          </div>
           <StyledSubMenu className="sub-menu">
             <Link to="/next-meeting">Next Meeting</Link>
             <Link to="/historical-meetings">Historical Meetings</Link>
@@ -30,7 +38,9 @@ export const Navbar = () => {
           <Link to="/gallery">Gallery</Link>
         </div>
         <div className="menu-item">
-          <div className="sub-heading">Local Info</div>
+          <div className="sub-heading" tabIndex={0} role="button">
+            Local Info
+          </div>
           <StyledSubMenu className="sub-menu">
             <Link to="/links">Links</Link>
             <Link to="/events">Events</Link>
@@ -40,11 +50,6 @@ export const Navbar = () => {
           <Link to="/news">News</Link>
         </div>
       </StyledMenu>
-      <StyledMenuButton id="menu-button" htmlFor="menu-toggle">
-        <span />
-        <span />
-        <span />
-      </StyledMenuButton>
     </StyledNavbar>
   );
 };
@@ -65,9 +70,22 @@ const StyledNavbar = styled.nav`
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 `;
 
+const StyledSkipLink = styled.a`
+  z-index: 9999;
+  background: ${colors.darkBlue};
+  color: ${colors.white};
+  font-size: 1.3em;
+  padding: 1em;
+  position: absolute;
+  transform: translateY(calc(-100% - 1.5em));
+  transition: transform 0.15s ease-in-out;
+  &:focus {
+    transform: translateY(0%);
+  }
+`;
+
 const StyledMenuButton = styled.label`
   display: none;
-  outline: none;
   border: none;
   background: none;
   cursor: pointer;
@@ -84,17 +102,18 @@ const StyledMenuButton = styled.label`
   & > span {
     width: 100%;
     height: 2px;
-    background: ${colors.darkBlue};
+    backdrop-filter: invert(1) hue-rotate(65deg);
+    position: relative;
   }
 `;
 
 const StyledLogo = styled(Link)`
   display: flex;
   text-decoration: none;
+  z-index: 999;
   & > .logo {
     width: 4.5em;
     height: auto;
-    z-index: 999;
   }
   & > .logo-text {
     display: flex;
@@ -118,7 +137,7 @@ const StyledLogo = styled(Link)`
       font-family: ${fonts.sansSerif};
       font-weight: normal;
       font-size: 1em;
-      color: ${colors.lightGrey};
+      color: ${colors.grey};
       letter-spacing: 1.2px;
       text-transform: uppercase;
       margin: 0;
@@ -144,6 +163,7 @@ const StyledSubMenu = styled.div`
   & > a {
     position: relative;
     margin: 0.2em -0.3em 0.3em 1.2em;
+    width: calc(100% - 1.7em);
     padding: 0.5em;
     font-family: ${fonts.serif};
     text-decoration: none;
@@ -199,6 +219,7 @@ const StyledMenu = styled.div`
       text-transform: uppercase;
       margin: 0;
       text-align: center;
+      white-space: nowrap;
     }
 
     &:before {
@@ -214,7 +235,8 @@ const StyledMenu = styled.div`
       transition: transform 0.25s ease-in-out;
     }
 
-    &:hover {
+    &:hover,
+    &:focus-within {
       background: rgba(255, 255, 255, 0.8);
 
       &:before {
@@ -234,7 +256,7 @@ const StyledToggle = styled.input`
   display: none;
 
   @media ${device.mobile} {
-    & + #menu .menu-item {
+    & + #menu {
       display: none;
     }
 
@@ -246,13 +268,13 @@ const StyledToggle = styled.input`
       bottom: 0;
       flex-flow: column nowrap;
       background: ${colors.accentBackground};
+      display: flex;
       align-items: center;
       justify-content: center;
       & > .menu-item {
         justify-content: flex-start;
         flex: 0;
         width: 100%;
-        display: flex;
         background: none;
         &:before {
           display: none;
@@ -277,6 +299,7 @@ const StyledToggle = styled.input`
         }
 
         &:hover,
+        &:focus-within,
         &:active {
           & > .sub-heading {
             z-index: 999;
@@ -300,12 +323,6 @@ const StyledToggle = styled.input`
             }
           }
         }
-      }
-    }
-
-    &:checked + #menu + #menu-button {
-      & > span {
-        background: ${colors.white};
       }
     }
   }
