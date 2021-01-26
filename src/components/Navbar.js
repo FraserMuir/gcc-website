@@ -37,7 +37,7 @@ export const Navbar = () => {
           </StyledSubMenu>
         </div>
         <div className="menu-item">
-          <Link to="/news">Events</Link>
+          <Link to="/news">News</Link>
         </div>
       </StyledMenu>
       <StyledMenuButton id="menu-button" htmlFor="menu-toggle">

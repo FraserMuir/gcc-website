@@ -6,7 +6,7 @@ export const Image = ({ imageData = {}, heading, ...props }) => {
 
   const headingAttrs = heading ? { style: { minHeight: "30vh", height: "100%", maxHeight: "31em", minWidth: "100vw" }, className: "blur", loading: "eager" } : {}
   
-  const attrs = { alt, durationFadeIn: 200, ...headingAttrs, ...props };
+  const attrs = { alt, durationFadeIn: 40, ...headingAttrs, ...props };
   
   if (!!image && !!image.childImageSharp) {
     return (
