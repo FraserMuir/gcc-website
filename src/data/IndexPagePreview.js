@@ -1,6 +1,6 @@
 import React from "react";
 import { frontmatterWrapper } from "../helpers/frontmatterWrapper";
-import IndexPage from "pages/Home";
+import IndexPage from "../app/Home";
 
 export const IndexPagePreview = ({ entry, getAsset }) => {
   const data = entry.getIn(["data"]).toJS();

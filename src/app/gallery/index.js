@@ -4,19 +4,21 @@ import { graphql } from "gatsby";
 import { Layout } from "../../components/Layout";
 import { Image } from "../../components/Image";
 
-import { Links } from "./Links";
+import { Gallery } from "./Gallery";
 
-export default ({ data: { markdownRemark }, preview }) => {
+const GalleryPage = ({ data: { markdownRemark }, preview }) => {
   return (
     <Layout preview={preview}>
       <Image heading imageData={markdownRemark.frontmatter.image} />
-      <Links {...markdownRemark.frontmatter} />
+      <Gallery {...markdownRemark.frontmatter} />
     </Layout>
   );
 };
 
+export default GalleryPage
+
 export const pageQuery = graphql`
-  query($slug: String) {
+  query GalleryPage($slug: String) {
     markdownRemark(fields: { slug: { eq: $slug } }) {
       frontmatter {
         image {

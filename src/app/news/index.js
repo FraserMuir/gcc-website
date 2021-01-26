@@ -4,19 +4,21 @@ import { graphql } from "gatsby";
 import { Layout } from "../../components/Layout";
 import { Image } from "../../components/Image";
 
-import { Home } from "./Home";
+import { News } from "./News";
 
-export default ({ data: { markdownRemark }, preview }) => {
+const NewsPage = ({ data: { markdownRemark }, preview }) => {
   return (
     <Layout preview={preview}>
       <Image heading imageData={markdownRemark.frontmatter.image} />
-      <Home {...markdownRemark.frontmatter} />
+      <News {...markdownRemark.frontmatter} />
     </Layout>
   );
 };
 
+export default NewsPage;
+
 export const pageQuery = graphql`
-  query($slug: String) {
+  query NewsPage($slug: String) {
     markdownRemark(fields: { slug: { eq: $slug } }) {
       frontmatter {
         image {
@@ -24,15 +26,6 @@ export const pageQuery = graphql`
             fluid(maxWidth: 1500, quality: 40) {
               ...GatsbyImageSharpFluid
             }
-          }
-        }
-        main {
-          content
-          heading
-          signature
-          link {
-            path
-            text
           }
         }
       }

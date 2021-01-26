@@ -32,9 +32,10 @@ exports.createPages = ({ actions, graphql }) => {
     posts.forEach((edge) => {
       const id = edge.node.id;
       if (!edge.node.frontmatter.templateKey) return null;
+      console.log(edge.node.fields.slug);
       createPage({
         path: edge.node.fields.slug,
-        component: path.resolve(`src/pages/${String(edge.node.frontmatter.templateKey)}/index.js`),
+        component: path.resolve(`src/app/${String(edge.node.frontmatter.templateKey)}/index.js`),
         // additional data can be passed via context
         context: {
           id,
