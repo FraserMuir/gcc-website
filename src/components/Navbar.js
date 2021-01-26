@@ -2,7 +2,7 @@ import { Link } from "gatsby";
 import React from "react";
 import styled from "styled-components";
 
-import logo from "../img/logo.svg";
+import logo from "../images/logo.svg";
 import { device } from "../styles/breakpoints";
 import { colors } from "../styles/colors";
 import { fonts } from "../styles/fonts";

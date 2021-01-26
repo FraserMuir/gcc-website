@@ -1,7 +1,7 @@
 import React from "react";
 import { Helmet } from "react-helmet";
 import { useStaticQuery, graphql } from "gatsby";
-import favicon from "../img/favicon.ico";
+import favicon from "../images/favicon.ico";
 
 const query = graphql`
   query SEO {

@@ -4,21 +4,21 @@ import { Image } from "../components/Image";
 
 import { Layout } from "../components/Layout";
 
-const NextMeetingPage = ({ data: { markdownRemark: { frontmatter } }, preview }) => {
+const LinksPage = ({ data: { markdownRemark: { frontmatter } }, preview }) => {
   const { image } = frontmatter;
-  console.log(frontmatter);
+
   return (
     <Layout preview={preview}>
       <Image heading imageData={image} />
-      <h1>Next Meeting</h1>
+      <h1>Links</h1>
     </Layout>
   );
 };
 
-export default NextMeetingPage;
+export default LinksPage;
 
 export const pageQuery = graphql`
-  query NextMeetingPageTemplate($slug: String) {
+  query LinksPageTemplate($slug: String) {
     markdownRemark(fields: { slug: { eq: $slug } }) {
       frontmatter {
         image {
