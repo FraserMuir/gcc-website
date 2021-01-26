@@ -1,28 +1,22 @@
 import React from "react";
 import { graphql } from "gatsby";
 
-import { Layout } from "../components/Layout";
-import { Image } from "../components/Image";
+import { Layout } from "../../components/Layout";
+import { Image } from "../../components/Image";
 
-const IndexPage = ({ data: { markdownRemark: { frontmatter } }, preview }) => {
-  const { image, main } = frontmatter;
+import { Home } from "./Home";
 
+export default ({ data: { markdownRemark }, preview }) => {
   return (
     <Layout preview={preview}>
-      <Image heading imageData={image} />
-      <h1>{main.heading}</h1>
-      <p>{main.content}</p>
-      <i>{main.signature}</i>
-      <Image heading imageData={main.image} />
-      <a href={main.link?.path}>{main.link?.text}</a>
+      <Image heading imageData={markdownRemark.frontmatter.image} />
+      <Home {...markdownRemark.frontmatter} />
     </Layout>
   );
 };
 
-export default IndexPage;
-
 export const pageQuery = graphql`
-  query IndexPageTemplate($slug: String) {
+  query($slug: String) {
     markdownRemark(fields: { slug: { eq: $slug } }) {
       frontmatter {
         image {

@@ -11,7 +11,7 @@ export const GlobalStyle = createGlobalStyle`
     font-size: 12px;
     font-family: ${fonts.serif};
     text-rendering: optimizeLegibility;
-    -webkit-font-smoothing: antialiased;
+    -webkit-font-smoothing: subpixel-antialiased;
     color: rgba(0,0,0,0.8);
     background: ${colors.background};
   }

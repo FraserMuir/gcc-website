@@ -1,24 +1,22 @@
 import React from "react";
 import { graphql } from "gatsby";
-import { Image } from "../components/Image";
 
-import { Layout } from "../components/Layout";
+import { Layout } from "../../components/Layout";
+import { Image } from "../../components/Image";
 
-const HistoricalMeetingsPage = ({ data: { markdownRemark: { frontmatter } }, preview }) => {
-  const { image } = frontmatter;
+import { HistoricalMeetings } from "./HistoricalMeetings";
 
+export default ({ data: { markdownRemark }, preview }) => {
   return (
     <Layout preview={preview}>
-      <Image heading imageData={image} />
-      <h1>Historical Meetings</h1>
+      <Image heading imageData={markdownRemark.frontmatter.image} />
+      <HistoricalMeetings {...markdownRemark.frontmatter} />
     </Layout>
   );
 };
 
-export default HistoricalMeetingsPage;
-
 export const pageQuery = graphql`
-  query HistoricalMeetingsPageTemplate($slug: String) {
+  query($slug: String) {
     markdownRemark(fields: { slug: { eq: $slug } }) {
       frontmatter {
         image {

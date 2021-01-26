@@ -34,7 +34,7 @@ exports.createPages = ({ actions, graphql }) => {
       if (!edge.node.frontmatter.templateKey) return null;
       createPage({
         path: edge.node.fields.slug,
-        component: path.resolve(`src/templates/${String(edge.node.frontmatter.templateKey)}.js`),
+        component: path.resolve(`src/pages/${String(edge.node.frontmatter.templateKey)}/index.js`),
         // additional data can be passed via context
         context: {
           id,
