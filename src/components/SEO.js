@@ -41,7 +41,7 @@ export const SEO = () => {
       <link rel="preconnect" href="https://fonts.googleapis.com" />
       <link rel="preconnect" href="https://fonts.gstatic.com" />
       <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&family=Open+Sans&family=Sacramento&display=swap" />
-      <link rel="preload" as="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&family=Open+Sans&family=Sacramento&display=swap" />
+      <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&family=Open+Sans&family=Sacramento&display=swap" />
 
     </Helmet>
   );
