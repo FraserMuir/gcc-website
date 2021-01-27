@@ -25,21 +25,13 @@ collections:
   - name: "pages"
     label: "Pages"
     files:
-      - file: "src/pages/index.md"
+      - file: "src/data/pages/index.md"
         label: "Home Page"
         name: "index"
         fields:
-          - { label: "Template Key", name: "templateKey", widget: "hidden", default: "index-page" }
+          - { label: "Template Key", name: "templateKey", widget: "hidden" }
           - { label: Image, name: image, widget: image }
-          - {
-              label: Welcome,
-              name: main,
-              widget: object,
-              fields:
-                [
-                  { label: Heading, name: heading, widget: string },
-                  { label: Body, name: body, widget: markdown },
-                  { label: Signature, name: signature, widget: string },
-                  { label: Link, name: link, widget: object, fields: [{ label: Text, name: text, widget: string }, { label: Path, name: path, widget: string }] },
-                ],
-            }
+          - { label: Heading, name: heading, widget: string }
+          - { label: Body, name: body, widget: markdown }
+          - { label: Signature, name: signature, widget: string }
+          - { label: Link, name: link, widget: object, fields: [{ label: Text, name: text, widget: string }, { label: Path, name: path, widget: string }] }

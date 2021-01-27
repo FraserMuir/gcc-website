@@ -26,14 +26,12 @@ export const pageQuery = graphql`
             }
           }
         }
-        main {
-          body
-          heading
-          signature
-          link {
-            path
-            text
-          }
+        body
+        heading
+        signature
+        link {
+          path
+          text
         }
       }
     }

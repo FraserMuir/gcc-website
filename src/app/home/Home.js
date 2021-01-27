@@ -38,8 +38,10 @@ const StyledWelcomeCard = styled.div`
     padding: 1em 2em 0;
     margin: auto;
     text-align: center;
-    & > p {
+    & > div {
       font-size: 1.25em;
+      white-space: pre-wrap;
+      line-height: 3;
     }
     & > i {
       font-family: ${fonts.display};
@@ -64,19 +66,18 @@ const StyledWelcomeCard = styled.div`
   }
 `;
 
-export const Home = ({ main }) => {
-  console.log(main);
+export const Home = ({ body, heading, signature, link }) => {
   return (
     <StyledWelcomeCard>
       <div className="heading">
         <hr />
-        <h1>Welcome</h1>
+        <h1>{heading}</h1>
         <hr />
       </div>
       <div className="content">
-        <p>{main.content}</p>
-        <i>The Community Council</i>
-        <a href={main.link?.path}>About us</a>
+        <div dangerouslySetInnerHTML={{ __html: body }} />
+        <i>{signature}</i>
+        <a href={link.path}>{link.text}</a>
       </div>
     </StyledWelcomeCard>
   );
