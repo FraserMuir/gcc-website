@@ -1,22 +1,22 @@
 import React from "react";
 import { graphql } from "gatsby";
 
-import { Layout } from "../../components/Layout";
+import { Layout } from "components/Layout";
 
-import { Home } from "./Home";
+import { ContactUs } from "./ContactUs";
 
-const HomePage = ({ data: { markdownRemark }, preview }) => {
+const ContactUsPage = ({ data: { markdownRemark }, preview }) => {
   return (
     <Layout preview={preview} image={markdownRemark.frontmatter.image}>
-      <Home {...markdownRemark.frontmatter} />
+      <ContactUs {...markdownRemark.frontmatter} />
     </Layout>
   );
 };
 
-export default HomePage;
+export default ContactUsPage;
 
 export const pageQuery = graphql`
-  query HomePage($slug: String) {
+  query ContactUsPage($slug: String) {
     markdownRemark(fields: { slug: { eq: $slug } }) {
       frontmatter {
         image {
@@ -25,13 +25,6 @@ export const pageQuery = graphql`
               ...GatsbyImageSharpFluid
             }
           }
-        }
-        body
-        heading
-        signature
-        link {
-          path
-          text
         }
       }
     }

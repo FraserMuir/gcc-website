@@ -1,4 +1,5 @@
 ---
+type: page
 templateKey: about-us
 image: /media/red.jpg
 title: About Us

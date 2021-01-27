@@ -18,6 +18,20 @@ module.exports = {
     "gatsby-plugin-styled-components",
     "gatsby-plugin-react-helmet",
     {
+      resolve: "gatsby-plugin-root-import",
+      options: {
+        src: path.join(__dirname, "src"),
+
+        app: path.join(__dirname, "src/app"),
+        components: path.join(__dirname, "src/components"),
+        data: path.join(__dirname, "src/data"),
+        helpers: path.join(__dirname, "src/helpers"),
+        images: path.join(__dirname, "src/images"),
+        pages: path.join(__dirname, "src/pages"),
+        styles: path.join(__dirname, "src/styles"),
+      },
+    },
+    {
       resolve: "gatsby-source-filesystem",
       options: {
         path: `${__dirname}/static/media`,

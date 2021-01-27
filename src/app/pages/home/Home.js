@@ -1,8 +1,31 @@
 import React from "react";
 import styled from "styled-components";
+import { Link } from "gatsby";
 
-import { colors } from "../../styles/colors";
-import { fonts } from "../../styles/fonts";
+import { colors } from "styles/colors";
+import { fonts } from "styles/fonts";
+import { NextMeetingWidget } from "app/widgets/next-meeting/NextMeeting";
+
+export const Home = ({ frontmatter: { welcomeWidget }, html }) => {
+  const { heading, signature, link } = welcomeWidget;
+  return (
+    <>
+      <StyledWelcomeCard>
+        <div className="heading">
+          <hr />
+          <h1>{heading}</h1>
+          <hr />
+        </div>
+        <div className="content">
+          <div dangerouslySetInnerHTML={{ __html: html }} />
+          <i>{signature}</i>
+          <Link to={link.path}>{link.text}</Link>
+        </div>
+      </StyledWelcomeCard>
+      <NextMeetingWidget />
+    </>
+  );
+};
 
 const StyledWelcomeCard = styled.div`
   width: 100%;
@@ -30,7 +53,7 @@ const StyledWelcomeCard = styled.div`
       text-transform: uppercase;
       font-weight: normal;
       margin: 0 1em;
-      font-size: 1.75em;
+      font-size: 1.9em;
     }
   }
 
@@ -40,12 +63,16 @@ const StyledWelcomeCard = styled.div`
     text-align: center;
     & > div {
       margin: 1em 0;
-      font-size: 1.25em;
-      white-space: pre-wrap;
+      p {
+        margin: 1em 0;
+        font-size: 1.25em;
+        white-space: pre-wrap;
+      }
     }
     & > i {
       font-family: ${fonts.display};
       font-size: 4em;
+      margin: -1em 0 1em;
     }
     & > a {
       display: block;
@@ -65,20 +92,3 @@ const StyledWelcomeCard = styled.div`
     }
   }
 `;
-
-export const Home = ({ body, heading, signature, link }) => {
-  return (
-    <StyledWelcomeCard>
-      <div className="heading">
-        <hr />
-        <h1>{heading}</h1>
-        <hr />
-      </div>
-      <div className="content">
-        <div dangerouslySetInnerHTML={{ __html: body }} />
-        <i>{signature}</i>
-        <a href={link.path}>{link.text}</a>
-      </div>
-    </StyledWelcomeCard>
-  );
-};

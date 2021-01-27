@@ -11,9 +11,13 @@ const StyledLayout = styled.div`
   width: 100%;
   height: 100%;
   main {
+    width: 80em;
+    max-width: 96%;
     display: flex;
     flex-flow: column nowrap;
-    align-items: center;
+    justify-content: center;
+    gap: 3em 0;
+    margin: 3em auto;
   }
 `;
 
@@ -23,8 +27,10 @@ export const Layout = ({ preview, children, image }) => {
       {!preview && <SEO />}
       <GlobalStyle />
       <Navbar />
-      {image && <Image heading imageData={image} />}
-      <main id="main">{children}</main>
+      <div>
+        {image && <Image heading imageData={image} />}
+        <main id="main">{children}</main>
+      </div>
       <Footer />
     </StyledLayout>
   );

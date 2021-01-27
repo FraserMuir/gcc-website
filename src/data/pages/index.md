@@ -1,12 +1,14 @@
 ---
+type: page
 templateKey: home
 title: Great coffee with a conscience
 image: /media/home.jpg
-heading: Welcome
-signature: The Community Council
-link:
-  text: About us
-  path: /about-us
+welcomeWidget:
+  heading: Welcome
+  signature: The Community Council
+  link:
+    text: About us
+    path: /about-us
 ---
 Welcome to the new Garelochhead Community Council web site.
 

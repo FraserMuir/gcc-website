@@ -4,7 +4,7 @@ import Img from 'gatsby-image'
 export const Image = ({ imageData = {}, heading, ...props }) => {
   const { alt = '', childImageSharp, image, url } = imageData
 
-  const headingAttrs = heading ? { style: { minHeight: "30vh", height: "100%", maxHeight: "30em", minWidth: "100vw" }, className: "blur", loading: "eager" } : {}
+  const headingAttrs = heading ? { style: { minHeight: "30vh", height: "100%", maxHeight: "30em", minWidth: "100%" }, className: "blur", loading: "eager" } : {}
   
   const attrs = { alt, durationFadeIn: 40, ...headingAttrs, ...props };
   

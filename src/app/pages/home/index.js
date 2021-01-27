@@ -1,29 +1,38 @@
 import React from "react";
 import { graphql } from "gatsby";
 
-import { Layout } from "../../components/Layout";
+import { Layout } from "components/Layout";
 
-import { HistoricalMeetings } from "./HistoricalMeetings";
+import { Home } from "./Home";
 
-const HistoricalMeetingsPage = ({ data: { markdownRemark }, preview }) => {
+const HomePage = ({ data: { markdownRemark }, preview }) => {
   return (
     <Layout preview={preview} image={markdownRemark.frontmatter.image}>
-      <HistoricalMeetings {...markdownRemark.frontmatter} />
+      <Home {...markdownRemark} />
     </Layout>
   );
 };
 
-export default HistoricalMeetingsPage;
+export default HomePage;
 
 export const pageQuery = graphql`
-  query HistoricalMeetingsPage($slug: String) {
+  query HomePage($slug: String) {
     markdownRemark(fields: { slug: { eq: $slug } }) {
+      html
       frontmatter {
         image {
           childImageSharp {
             fluid(maxWidth: 1500, quality: 40) {
               ...GatsbyImageSharpFluid
             }
+          }
+        }
+        welcomeWidget {
+          heading
+          signature
+          link {
+            path
+            text
           }
         }
       }

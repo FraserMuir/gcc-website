@@ -1,0 +1,18 @@
+{
+  "settings": {
+    "import/resolver": {
+      "alias": {
+        "map": [
+          ["src", "./src"],
+          ["app", "./src/app"],
+          ["components", "./src/components"],
+          ["data", "./src/data"],
+          ["helpers", "./src/helpers"],
+          ["images", "./src/images"],
+          ["pages", "./src/pages"],
+          ["styles", "./src/styles"]
+        ]
+      }
+    }
+  }
+}

@@ -20,16 +20,6 @@ export const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
   }
 
-  main {
-    width: 80em;
-    max-width: 96%;
-    display: flex;
-    flex-flow: column nowrap;
-    justify-content: center;
-    gap: 3em 0;
-    margin: 3em auto;
-  }
-
   .gatsby-image-wrapper.blur:before {
     content: "";
     position: absolute;

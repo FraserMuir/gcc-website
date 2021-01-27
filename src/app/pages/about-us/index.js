@@ -1,22 +1,22 @@
 import React from "react";
 import { graphql } from "gatsby";
 
-import { Layout } from "../../components/Layout";
+import { Layout } from "components/Layout";
 
-import { Gallery } from "./Gallery";
+import { AboutUs } from "./AboutUs";
 
-const GalleryPage = ({ data: { markdownRemark }, preview }) => {
+const AboutUsPage = ({ data: { markdownRemark }, preview }) => {
   return (
     <Layout preview={preview} image={markdownRemark.frontmatter.image}>
-      <Gallery {...markdownRemark.frontmatter} />
+      <AboutUs {...markdownRemark.frontmatter} />
     </Layout>
   );
 };
 
-export default GalleryPage
+export default AboutUsPage;
 
 export const pageQuery = graphql`
-  query GalleryPage($slug: String) {
+  query AboutUsPage($slug: String) {
     markdownRemark(fields: { slug: { eq: $slug } }) {
       frontmatter {
         image {
