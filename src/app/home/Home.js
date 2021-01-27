@@ -39,9 +39,9 @@ const StyledWelcomeCard = styled.div`
     margin: auto;
     text-align: center;
     & > div {
+      margin: 1em 0;
       font-size: 1.25em;
       white-space: pre-wrap;
-      line-height: 3;
     }
     & > i {
       font-family: ${fonts.display};
