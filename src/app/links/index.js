@@ -2,14 +2,12 @@ import React from "react";
 import { graphql } from "gatsby";
 
 import { Layout } from "../../components/Layout";
-import { Image } from "../../components/Image";
 
 import { Links } from "./Links";
 
 const LinksPage = ({ data: { markdownRemark }, preview }) => {
   return (
-    <Layout preview={preview}>
-      <Image heading imageData={markdownRemark.frontmatter.image} />
+    <Layout preview={preview} image={markdownRemark.frontmatter.image}>
       <Links {...markdownRemark.frontmatter} />
     </Layout>
   );

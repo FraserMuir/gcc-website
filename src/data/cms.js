@@ -3,4 +3,4 @@ import { withStyledComponentsRendered } from "../helpers/styleInjector";
 
 import { IndexPagePreview } from "./IndexPagePreview";
 
-CMS.registerPreviewTemplate("index", withStyledComponentsRendered(IndexPagePreview));
+CMS.registerPreviewTemplate("home", withStyledComponentsRendered(IndexPagePreview));

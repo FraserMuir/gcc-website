@@ -2,14 +2,12 @@ import React from "react";
 import { graphql } from "gatsby";
 
 import { Layout } from "../../components/Layout";
-import { Image } from "../../components/Image";
 
 import { Home } from "./Home";
 
 const HomePage = ({ data: { markdownRemark }, preview }) => {
   return (
-    <Layout preview={preview}>
-      <Image heading imageData={markdownRemark.frontmatter.image} />
+    <Layout preview={preview} image={markdownRemark.frontmatter.image}>
       <Home {...markdownRemark.frontmatter} />
     </Layout>
   );
@@ -29,7 +27,7 @@ export const pageQuery = graphql`
           }
         }
         main {
-          content
+          body
           heading
           signature
           link {

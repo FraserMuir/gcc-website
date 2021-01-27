@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { GlobalStyle } from "../styles/global";
 
 import { Footer } from "./Footer";
+import { Image } from "./Image";
 import { Navbar } from "./Navbar";
 import { SEO } from "./SEO";
 
@@ -16,12 +17,13 @@ const StyledLayout = styled.div`
   }
 `;
 
-export const Layout = ({ preview, children }) => {
+export const Layout = ({ preview, children, image }) => {
   return (
     <StyledLayout>
       {!preview && <SEO />}
       <GlobalStyle />
       <Navbar />
+      {image && <Image heading imageData={image} />}
       <main id="main">{children}</main>
       <Footer />
     </StyledLayout>

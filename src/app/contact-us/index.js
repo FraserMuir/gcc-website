@@ -3,20 +3,20 @@ import { graphql } from "gatsby";
 
 import { Layout } from "../../components/Layout";
 
-import { NextMeeting } from "./NextMeeting";
+import { ContactUs } from "./ContactUs";
 
-const NextMeetingPage = ({ data: { markdownRemark }, preview }) => {
+const ContactUsPage = ({ data: { markdownRemark }, preview }) => {
   return (
     <Layout preview={preview} image={markdownRemark.frontmatter.image}>
-      <NextMeeting {...markdownRemark.frontmatter} />
+      <ContactUs {...markdownRemark.frontmatter} />
     </Layout>
   );
 };
 
-export default NextMeetingPage;
+export default ContactUsPage;
 
 export const pageQuery = graphql`
-  query NextMeetingPage($slug: String) {
+  query ContactUsPage($slug: String) {
     markdownRemark(fields: { slug: { eq: $slug } }) {
       frontmatter {
         image {
