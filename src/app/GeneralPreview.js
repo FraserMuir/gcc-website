@@ -1,10 +1,9 @@
 import React from "react";
 import { frontmatterWrapper } from "../helpers/frontmatterWrapper";
-import IndexPage from "./pages/index";
 
-export const IndexPagePreview = ({ entry, getAsset }) => {
+export const GeneralPreview = ({ entry, getAsset, component: Component }) => {
   const data = entry.getIn(["data"]).toJS();
   if (!data) return null;
-
-  return <IndexPage data={frontmatterWrapper(data, getAsset)} preview />;
+  console.log(data);
+  return <Component data={frontmatterWrapper(data, getAsset)} preview />;
 };

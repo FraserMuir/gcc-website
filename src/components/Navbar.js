@@ -2,16 +2,18 @@ import React, { useLayoutEffect, useRef, useState } from "react";
 import { Link } from "gatsby";
 import styled from "styled-components";
 
-import logo from "../images/logo.svg";
-import { device } from "../styles/breakpoints";
-import { colors } from "../styles/colors";
-import { fonts } from "../styles/fonts";
+import logo from "images/logo.svg";
+import { device } from "styles/breakpoints";
+import { colors } from "styles/colors";
+import { fonts } from "styles/fonts";
 
 export const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const spotRef = useRef(null);
   
   useLayoutEffect(() => {
+    const el = spotRef.current;
+    
     const callback = (entries) => {
       const [entry] = entries;
       setIsScrolled(!entry.isIntersecting);
@@ -21,8 +23,8 @@ export const Navbar = () => {
       threshold: [1],
     };
     const io = new IntersectionObserver(callback, options);
-    io.observe(spotRef.current);
-    return () => io.unobserve(spotRef.current);
+    io.observe(el);
+    return () => io.unobserve(el);
   });
 
   return (
@@ -177,6 +179,7 @@ const StyledSubMenu = styled.div`
   width: 100%;
   padding: 2.2em 0 0.2em;
   background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(5px);
   visibility: hidden;
   opacity: 0;
   z-index: 99;

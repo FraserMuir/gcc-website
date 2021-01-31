@@ -1,9 +1,6 @@
 import React from "react";
+import { NextMeetingWidget } from "app/widgets/next-meeting";
 
-export const NextMeeting = ({ ...props }) => {
-  return (
-    <>
-      <h1>NextMeeting</h1>
-    </>
-  );
+export const NextMeeting = () => {
+  return <NextMeetingWidget />;
 };

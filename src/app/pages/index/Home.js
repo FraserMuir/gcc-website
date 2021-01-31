@@ -78,7 +78,7 @@ const StyledWelcomeCard = styled.div`
       display: block;
       padding: 0.7em;
       background: ${colors.darkBlue};
-      color: ${colors.white};
+      color: white;
       text-transform: uppercase;
       transition: all 0.15s ease-in-out;
       width: fit-content;
@@ -87,7 +87,6 @@ const StyledWelcomeCard = styled.div`
       font-size: 1.2em;
       &:hover {
         background: ${colors.highlightBlue};
-        color: white;
       }
     }
   }
