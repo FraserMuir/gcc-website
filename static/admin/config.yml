@@ -15,7 +15,7 @@ collections:
   - name: "widgets"
     label: "Widgets"
     files:
-      - file: "src/widgets/next-meeting.md"
+      - file: "src/app/widgets/next-meeting/index.md"
         label: "Next Meeting"
         name: "next-meeting"
         fields:
