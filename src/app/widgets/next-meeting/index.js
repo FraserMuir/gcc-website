@@ -1,5 +1,6 @@
 import React from "react";
 import { useStaticQuery, graphql } from "gatsby";
+import { NextMeeting } from "./NextMeeting";
 
 const widgetQuery = graphql`
   query NextMeetingWidget {
@@ -7,7 +8,7 @@ const widgetQuery = graphql`
       frontmatter {
         image {
           childImageSharp {
-            fluid(maxWidth: 1000, quality: 40) {
+            fluid(maxWidth: 960, quality: 80) {
               ...GatsbyImageSharpFluid
             }
           }
@@ -24,6 +25,5 @@ const widgetQuery = graphql`
 
 export const NextMeetingWidget = () => {
   const data = useStaticQuery(widgetQuery);
-
-  return <h1>Hii</h1>;
+  return <NextMeeting {...data.markdownRemark.frontmatter} />;
 };

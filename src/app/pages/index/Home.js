@@ -2,8 +2,8 @@ import React from "react";
 import styled from "styled-components";
 import { Link } from "gatsby";
 
-import { colors } from "styles/colors";
 import { fonts } from "styles/fonts";
+import { colors } from "styles/colors";
 import { NextMeetingWidget } from "app/widgets/next-meeting";
 
 export const Home = ({ frontmatter: { welcomeWidget }, html }) => {

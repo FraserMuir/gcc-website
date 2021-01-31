@@ -1,0 +1,9 @@
+{
+  "exclude": ["public"],
+  "compilerOptions": {
+    "baseUrl": "./src",
+    "paths": {
+      "*": ["*"],
+    }
+  }
+}

@@ -27,7 +27,6 @@ module.exports = {
         data: path.join(__dirname, "src/data"),
         helpers: path.join(__dirname, "src/helpers"),
         images: path.join(__dirname, "src/images"),
-        pages: path.join(__dirname, "src/pages"),
         styles: path.join(__dirname, "src/styles"),
       },
     },
