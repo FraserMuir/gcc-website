@@ -44,14 +44,16 @@ collections:
                 ],
             }
           - {
-            label: "Links Widget",
-            name: linksWidget,
-            widget: list,
-            min: 2,
-            max: 4,
-            fields:
-              - { label: Heading, name: heading, widget: string }
-              - { label: Blurb, name: blurb, widget: text }
-              - { label: Image, name: image, widget: image }
-              - { label: Path, name: path, widget: string }
-          }
+              label: "Links Widget",
+              name: linksWidget,
+              widget: list,
+              min: 2,
+              max: 4,
+              fields:
+                [
+                  { label: Heading, name: heading, widget: string },
+                  { label: Blurb, name: blurb, widget: text },
+                  { label: Image, name: image, widget: image },
+                  { label: Path, name: path, widget: string },
+                ],
+            }
