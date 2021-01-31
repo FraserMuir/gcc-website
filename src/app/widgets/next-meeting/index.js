@@ -5,6 +5,13 @@ const widgetQuery = graphql`
   query NextMeetingWidget {
     markdownRemark(fields: { slug: { eq: "/next-meeting/" } }, frontmatter: { type: { eq: "widget" } }) {
       frontmatter {
+        image {
+          childImageSharp {
+            fluid(maxWidth: 1000, quality: 40) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
         date
         agenda {
           publicURL
@@ -17,6 +24,6 @@ const widgetQuery = graphql`
 
 export const NextMeetingWidget = () => {
   const data = useStaticQuery(widgetQuery);
-  console.log(data);
+
   return <h1>Hii</h1>;
 };

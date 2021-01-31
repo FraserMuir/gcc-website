@@ -22,6 +22,7 @@ collections:
           - { label: "Date", name: "date", widget: "datetime" }
           - { label: "Location", name: "string", widget: "string" }
           - { label: "Agenda", name: "agenda", widget: "file" }
+          - { label: "Image", name: "image", widget: "image" }
   - name: "pages"
     label: "Pages"
     files:
