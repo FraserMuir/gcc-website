@@ -5,6 +5,12 @@ const { fmImagesToRelative } = require("gatsby-remark-relative-images");
 exports.createPages = ({ actions, graphql }) => {
   const { createPage } = actions;
 
+  // Create 404 page
+  createPage({
+    path: "/404",
+    component: path.resolve(`src/app/pages/404.js`),
+  });
+
   return graphql(`
     {
       allMarkdownRemark(limit: 1000) {
@@ -32,14 +38,21 @@ exports.createPages = ({ actions, graphql }) => {
     posts.forEach((edge) => {
       const id = edge.node.id;
       if (!edge.node.frontmatter.templateKey) return null;
-      console.log(edge.node.fields.slug);
+
+      let slug = edge.node.fields.slug;
+
+      // Remove trailing slash
+      if (slug.endsWith("/")) slug = slug.slice(0, -1);
+      // Remove trailing index
+      if (slug.endsWith("index")) slug = slug.replace("index", "");
+
       createPage({
-        path: edge.node.fields.slug,
+        path: slug,
         component: path.resolve(`src/app/pages/${String(edge.node.frontmatter.templateKey)}/index.js`),
         // additional data can be passed via context
         context: {
           id,
-          slug: edge.node.fields.slug
+          slug: edge.node.fields.slug,
         },
       });
     });
