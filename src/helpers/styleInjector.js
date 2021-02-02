@@ -19,10 +19,10 @@ function StyleInjector({ children }) {
   return iframeRef && <StyleSheetManager target={iframeRef}>{children}</StyleSheetManager>;
 }
 
-export const withStyledComponentsRendered = (Comp) => {
+export const withStyledComponentsRendered = (Comp, preview) => {
   return (props) => (
     <StyleInjector>
-      <Comp {...props} />
+      <Comp {...props} component={preview} />
     </StyleInjector>
   );
 };

@@ -15,23 +15,47 @@ collections:
   - name: "widgets"
     label: "Widgets"
     files:
-      - file: "src/widgets/next-meeting.md"
+      - file: "src/app/widgets/next-meeting/index.md"
         label: "Next Meeting"
         name: "next-meeting"
         fields:
           - { label: "Date", name: "date", widget: "datetime" }
           - { label: "Location", name: "string", widget: "string" }
           - { label: "Agenda", name: "agenda", widget: "file" }
+          - { label: "Image", name: "image", widget: "image" }
   - name: "pages"
     label: "Pages"
     files:
-      - file: "src/data/pages/index.md"
+      - file: "src/app/pages/index/index.md"
         label: "Home Page"
         name: "index"
         fields:
-          - { label: "Template Key", name: "templateKey", widget: "hidden" }
-          - { label: Image, name: image, widget: image }
-          - { label: Heading, name: heading, widget: string }
-          - { label: Body, name: body, widget: markdown }
-          - { label: Signature, name: signature, widget: string }
-          - { label: Link, name: link, widget: object, fields: [{ label: Text, name: text, widget: string }, { label: Path, name: path, widget: string }] }
+          - { label: "Template Key", name: templateKey, widget: "hidden" }
+          - { label: "Type", name: type, widget: "hidden", default: "page" }
+          - { label: "Main Image", name: image, widget: image }
+          - {
+              label: "Welcome Widget",
+              name: welcomeWidget,
+              widget: object,
+              fields:
+                [
+                  { label: Heading, name: heading, widget: string },
+                  { label: Body, name: body, widget: markdown },
+                  { label: Signature, name: signature, widget: string },
+                  { label: Link, name: link, widget: object, fields: [{ label: Text, name: text, widget: string }, { label: Path, name: path, widget: string }] },
+                ],
+            }
+          - {
+              label: "Links Widget",
+              name: linksWidget,
+              widget: list,
+              min: 2,
+              max: 4,
+              fields:
+                [
+                  { label: Heading, name: heading, widget: string },
+                  { label: Blurb, name: blurb, widget: text },
+                  { label: Image, name: image, widget: image },
+                  { label: Path, name: path, widget: string },
+                ],
+            }

@@ -1,56 +1,78 @@
+import React, { useLayoutEffect, useRef, useState } from "react";
 import { Link } from "gatsby";
-import React from "react";
 import styled from "styled-components";
 
-import logo from "../images/logo.svg";
-import { device } from "../styles/breakpoints";
-import { colors } from "../styles/colors";
-import { fonts } from "../styles/fonts";
+import logo from "images/logo.svg";
+import { device } from "styles/breakpoints";
+import { colors } from "styles/colors";
+import { fonts } from "styles/fonts";
 
 export const Navbar = () => {
+  const [isScrolled, setIsScrolled] = useState(false);
+  const spotRef = useRef(null);
+  
+  useLayoutEffect(() => {
+    const el = spotRef.current;
+    
+    const callback = (entries) => {
+      const [entry] = entries;
+      setIsScrolled(!entry.isIntersecting);
+    };
+    const options = {
+      rootMargin: "0px",
+      threshold: [1],
+    };
+    const io = new IntersectionObserver(callback, options);
+    io.observe(el);
+    return () => io.unobserve(el);
+  });
+
   return (
-    <StyledNavbar role="navigation" aria-label="main-navigation">
-      <StyledSkipLink href="#main">Skip to content</StyledSkipLink>
-      <StyledLogo className="logo-container" to="/">
-        <img className="logo" src={logo} alt="GCC logo" width="4.5rem" height="4.5rem" />
-        <div className="logo-text">
-          <h2>Garelochhead</h2>
-          <h3>Community Council</h3>
-        </div>
-      </StyledLogo>
-      <StyledMenuButton id="menu-button" htmlFor="menu-toggle" tabIndex={0}>
-        <span />
-        <span />
-        <span />
-      </StyledMenuButton>
-      <StyledToggle id="menu-toggle" type="checkbox" />
-      <StyledMenu id="menu">
-        <div className="menu-item">
-          <div className="sub-heading" tabIndex={0} role="button">
-            Meetings
+    <>
+      <div ref={spotRef} style={{ width: "100%", height: "0px" }} />
+      <StyledNavbar role="navigation" aria-label="main-navigation" className={isScrolled ? "scrolled" : ""}>
+        <StyledSkipLink href="#main">Skip to content</StyledSkipLink>
+        <StyledLogo className="logo-container" to="/">
+          <img className="logo" src={logo} alt="GCC logo" width="4.5rem" height="4.5rem" />
+          <div className="logo-text">
+            <h2>Garelochhead</h2>
+            <h3>Community Council</h3>
           </div>
-          <StyledSubMenu className="sub-menu">
-            <Link to="/next-meeting">Next Meeting</Link>
-            <Link to="/historical-meetings">Historical Meetings</Link>
-          </StyledSubMenu>
-        </div>
-        <div className="menu-item">
-          <Link to="/gallery">Gallery</Link>
-        </div>
-        <div className="menu-item">
-          <div className="sub-heading" tabIndex={0} role="button">
-            Local Info
+        </StyledLogo>
+        <StyledMenuButton id="menu-button" htmlFor="menu-toggle" tabIndex={0}>
+          <span />
+          <span />
+          <span />
+        </StyledMenuButton>
+        <StyledToggle id="menu-toggle" type="checkbox" />
+        <StyledMenu id="menu">
+          <div className="menu-item">
+            <div className="sub-heading" tabIndex={0} role="button">
+              Meetings
+            </div>
+            <StyledSubMenu className="sub-menu">
+              <Link to="/next-meeting">Next Meeting</Link>
+              <Link to="/historical-meetings">Historical Meetings</Link>
+            </StyledSubMenu>
           </div>
-          <StyledSubMenu className="sub-menu">
-            <Link to="/links">Links</Link>
-            <Link to="/events">Events</Link>
-          </StyledSubMenu>
-        </div>
-        <div className="menu-item">
-          <Link to="/news">News</Link>
-        </div>
-      </StyledMenu>
-    </StyledNavbar>
+          <div className="menu-item">
+            <Link to="/gallery">Gallery</Link>
+          </div>
+          <div className="menu-item">
+            <div className="sub-heading" tabIndex={0} role="button">
+              Local Info
+            </div>
+            <StyledSubMenu className="sub-menu">
+              <Link to="/links">Links</Link>
+              <Link to="/events">Events</Link>
+            </StyledSubMenu>
+          </div>
+          <div className="menu-item">
+            <Link to="/news">News</Link>
+          </div>
+        </StyledMenu>
+      </StyledNavbar>
+    </>
   );
 };
 
@@ -65,9 +87,13 @@ const StyledNavbar = styled.nav`
   left: 0;
   right: 0;
   z-index: 99;
-  background: rgba(255, 255, 255, 0.5);
-  transition: background 0.3s ease-out;
+  background: rgba(255, 255, 255, 0.6);
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  backdrop-filter: blur(10px);
+  transition: background 0.3s ease-out;
+  &.scrolled {
+    background: rgba(255, 255, 255, 0.875);
+  }
 `;
 
 const StyledSkipLink = styled.a`
@@ -153,6 +179,7 @@ const StyledSubMenu = styled.div`
   width: 100%;
   padding: 2.2em 0 0.2em;
   background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(5px);
   visibility: hidden;
   opacity: 0;
   z-index: 99;
@@ -266,6 +293,7 @@ const StyledToggle = styled.input`
       left: 0;
       right: 0;
       bottom: 0;
+      height: 100vh;
       flex-flow: column nowrap;
       background: ${colors.accentBackground};
       display: flex;

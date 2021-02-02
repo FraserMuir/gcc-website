@@ -18,6 +18,19 @@ module.exports = {
     "gatsby-plugin-styled-components",
     "gatsby-plugin-react-helmet",
     {
+      resolve: "gatsby-plugin-root-import",
+      options: {
+        src: path.join(__dirname, "src"),
+
+        app: path.join(__dirname, "src/app"),
+        components: path.join(__dirname, "src/components"),
+        data: path.join(__dirname, "src/data"),
+        helpers: path.join(__dirname, "src/helpers"),
+        images: path.join(__dirname, "src/images"),
+        styles: path.join(__dirname, "src/styles"),
+      },
+    },
+    {
       resolve: "gatsby-source-filesystem",
       options: {
         path: `${__dirname}/static/media`,
@@ -27,15 +40,15 @@ module.exports = {
     {
       resolve: "gatsby-source-filesystem",
       options: {
-        path: `${__dirname}/src/data/pages`,
-        name: "pages",
+        path: `${__dirname}/src/app/pages`,
+        name: "app",
       },
     },
     {
       resolve: "gatsby-source-filesystem",
       options: {
-        path: `${__dirname}/src/data/widgets`,
-        name: "widgets",
+        path: `${__dirname}/src/app/widgets`,
+        name: "app",
       },
     },
     {
@@ -75,7 +88,7 @@ module.exports = {
     {
       resolve: "gatsby-plugin-netlify-cms",
       options: {
-        modulePath: `${__dirname}/src/data/cms.js`,
+        modulePath: `${__dirname}/src/app/cms.js`,
       },
     },
     "gatsby-plugin-netlify",

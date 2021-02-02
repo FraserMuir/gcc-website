@@ -10,10 +10,5 @@ const convertToAssets = (data, getAsset) => {
 
 export const frontmatterWrapper = (data, getAsset) => {
   convertToAssets(data, getAsset);
-
-  return {
-    markdownRemark: {
-      frontmatter: data,
-    },
-  };
+  return data;
 };
