@@ -34,8 +34,8 @@ linksWidget:
     image: /media/meetings.png
     path: next-meeting
   - heading: Links
-    blurb: Here you can find out what's been discussed at Community Council
-      meetings, and what's on the agenda for the next meeting
+    blurb: We're building a resource of information all about Garelochhead - useful
+      links for residents and visitors
     image: /media/information.png
     path: links
 ---
