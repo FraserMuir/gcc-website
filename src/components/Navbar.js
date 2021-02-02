@@ -87,12 +87,12 @@ const StyledNavbar = styled.nav`
   left: 0;
   right: 0;
   z-index: 99;
-  background: rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 0.6);
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  backdrop-filter: blur(5px);
+  backdrop-filter: blur(10px);
   transition: background 0.3s ease-out;
   &.scrolled {
-    background: ${colors.white};
+    background: rgba(255, 255, 255, 0.875);
   }
 `;
 

@@ -7,11 +7,13 @@ import { faClock, faCompass } from "@fortawesome/free-regular-svg-icons";
 import { Image } from "components/Image";
 import { colors } from "styles/colors";
 import { fonts } from "styles/fonts";
+import { device } from "styles/breakpoints";
 
 export const NextMeeting = ({ agenda, date, image, string }) => {
   return (
     <StyledWidget>
-      <Image imageData={image} style={{ height: "25rem" }} />
+      <Image imageData={image} />
+      <h3>Next Meeting</h3>
       <div className="footer">
         <div className="date">
           <h3>{moment(date).format("MMMM")}</h3>
@@ -42,6 +44,50 @@ const StyledWidget = styled.div`
   box-shadow: 0 3px 6px 1px rgba(0, 0, 0, 0.1), 0 5px 15px 4px rgba(0, 0, 0, 0.1);
   overflow: hidden;
   position: relative;
+  will-change: opacity;
+
+  @media ${device.mobile} {
+    box-shadow: none;
+    border-radius: 0;
+    margin-bottom: -1.5rem;
+  }
+
+  & > .gatsby-image-wrapper {
+    height: 25rem;
+    @media ${device.tablet} {
+      height: 18rem;
+    }
+    @media ${device.mobile} {
+      height: 14rem;
+    }
+  }
+
+  & > h3 {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    height: 5rem;
+    left: 0;
+    right: 0;
+    margin: 0;
+    top: calc(50% - 4rem);
+    font-size: 6rem;
+    @media ${device.tablet} {
+      top: calc(50% - 4.25rem);
+      font-size: 5rem;
+    }
+    @media ${device.mobile} {
+      top: calc(50% - 4.5rem);
+      font-size: 4rem;
+    }
+    color: white;
+    font-weight: normal;
+    font-family: ${fonts.display};
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    filter: drop-shadow(-1px -1px 0px ${colors.lightGrey}) drop-shadow(3px 3px 0px ${colors.darkBlue});
+  }
 
   & > .footer {
     position: absolute;
@@ -54,6 +100,10 @@ const StyledWidget = styled.div`
     padding: 1rem;
     display: flex;
     align-items: center;
+    @media ${device.tablet} {
+      padding: 0.5rem;
+      height: 5rem;
+    }
 
     & > .date {
       display: flex;
@@ -64,6 +114,9 @@ const StyledWidget = styled.div`
       flex-flow: column nowrap;
       justify-content: center;
       align-items: center;
+      @media ${device.tablet} {
+        padding: 0 0.7rem;
+      }
       h3 {
         margin: 0;
         color: white;
@@ -82,19 +135,34 @@ const StyledWidget = styled.div`
       flex: 1;
       display: flex;
       align-items: center;
+      @media ${device.mobile} {
+        flex-flow: column nowrap;
+        align-items: flex-start;
+      }
       & > .time,
       & > .location {
         display: flex;
         align-items: center;
         gap: 0.75rem;
-        padding: 1rem 1.5rem;
+        padding: 0 1.5rem;
+        @media ${device.tablet} {
+          gap: 0.35rem;
+          padding: 0 0.25rem 0 1rem;
+        }
         & > svg {
           color: ${colors.grey};
           font-size: 2rem;
+          @media ${device.tablet} {
+            font-size: 1.65rem;
+          }
         }
         p {
+          margin: 0.35rem 0;
           color: ${colors.grey};
           font-size: 1.15rem;
+          @media ${device.tablet} {
+            font-size: 1rem;
+          }
         }
       }
     }

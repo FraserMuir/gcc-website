@@ -12,7 +12,7 @@ import { device } from "styles/breakpoints";
 export const Home = ({ frontmatter, preview }) => {
   const { image, welcomeWidget, linksWidget } = frontmatter || {};
   const { heading, signature, link, body } = welcomeWidget || {};
-  console.log(linksWidget);
+
   return (
     <Layout preview={preview} image={image}>
       <StyledWelcomeCard>
@@ -49,6 +49,10 @@ const StyledLinks = styled.div`
   padding: 0 1rem;
   gap: 3rem;
 
+  @media ${device.tablet} {
+    gap: 1.5rem;
+  }
+
   @media ${device.mobile} {
     gap: 1rem;
     flex-flow: column nowrap;
@@ -66,6 +70,9 @@ const StyledLinks = styled.div`
     position: relative;
     & > .gatsby-image-wrapper {
       height: 12rem;
+      @media ${device.tablet} {
+        height: 8rem;
+      }
       @media ${device.mobile} {
         height: 6rem;
       }
@@ -76,6 +83,9 @@ const StyledLinks = styled.div`
       flex-flow: column nowrap;
       justify-content: center;
       align-items: center;
+      @media ${device.tablet} {
+        padding: 1rem 0.5rem 0.5rem;
+      }
       @media ${device.mobile} {
         padding: 0.75rem 0.35rem 0.5rem;
       }

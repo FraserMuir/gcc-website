@@ -18,11 +18,19 @@ const StyledLayout = styled.div`
     flex-flow: column nowrap;
     justify-content: center;
     gap: 3em 0;
-    margin: 3em auto;
+    margin: 0 auto;
     @media ${device.mobile} {
       max-width: 100%;
       margin: 0 auto;
       gap: 1.5em 0;
+    }
+    margin-top: calc(-90px);
+    padding-top: calc(90px);
+    & > :first-child {
+      margin-top: 3em;
+    }
+    & > :last-child {
+      margin-bottom: 3em;
     }
   }
 `;
