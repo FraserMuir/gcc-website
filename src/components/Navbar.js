@@ -140,7 +140,7 @@ const StyledLogo = styled(Link)`
   z-index: 999;
   & > .logo {
     width: 4.5em;
-    height: auto;
+    height: 4.5em;
   }
   & > .logo-text {
     display: flex;

@@ -47,14 +47,8 @@ export const Home = ({ frontmatter, preview }) => {
 const StyledLinks = styled.div`
   display: flex;
   padding: 0 1rem;
-  gap: 3rem;
-
-  @media ${device.tablet} {
-    gap: 1.5rem;
-  }
 
   @media ${device.mobile} {
-    gap: 1rem;
     flex-flow: column nowrap;
   }
 
@@ -68,6 +62,18 @@ const StyledLinks = styled.div`
     display: flex;
     flex-flow: column nowrap;
     position: relative;
+
+    &:not(:last-child) {
+      margin-right: 2em;
+    }
+
+    @media ${device.mobile} {
+      margin-right: 0 !important;
+      &:not(:last-child) {
+        margin-bottom: 1rem;
+      }
+    }
+
     & > .gatsby-image-wrapper {
       height: 12rem;
       @media ${device.tablet} {
