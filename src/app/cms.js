@@ -2,6 +2,6 @@ import CMS from "netlify-cms-app";
 import { withStyledComponentsRendered } from "../helpers/styleInjector";
 
 import { GeneralPreview } from "./GeneralPreview";
-import IndexPage from "./pages/index";
+import { Home } from "./pages/index/Home";
 
-CMS.registerPreviewTemplate("index", withStyledComponentsRendered(GeneralPreview, IndexPage));
+CMS.registerPreviewTemplate("index", withStyledComponentsRendered(GeneralPreview, Home));

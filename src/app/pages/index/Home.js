@@ -2,14 +2,19 @@ import React from "react";
 import styled from "styled-components";
 import { Link } from "gatsby";
 
+import { Layout } from "components/Layout";
 import { fonts } from "styles/fonts";
 import { colors } from "styles/colors";
 import { NextMeetingWidget } from "app/widgets/next-meeting";
+import { Image } from "components/Image";
+import { device } from "styles/breakpoints";
 
-export const Home = ({ frontmatter: { welcomeWidget }, html }) => {
-  const { heading, signature, link } = welcomeWidget;
+export const Home = ({ frontmatter, preview }) => {
+  const { image, welcomeWidget, linksWidget } = frontmatter || {};
+  const { heading, signature, link, body } = welcomeWidget || {};
+  console.log(linksWidget);
   return (
-    <>
+    <Layout preview={preview} image={image}>
       <StyledWelcomeCard>
         <div className="heading">
           <hr />
@@ -17,27 +22,111 @@ export const Home = ({ frontmatter: { welcomeWidget }, html }) => {
           <hr />
         </div>
         <div className="content">
-          <div dangerouslySetInnerHTML={{ __html: html }} />
+          <p>{body}</p>
           <i>{signature}</i>
-          <Link to={link.path}>{link.text}</Link>
+          <Link to={`/${link.path}`}>{link.text}</Link>
         </div>
       </StyledWelcomeCard>
-      <NextMeetingWidget />
-    </>
+      <StyledLinks>
+        {linksWidget.map((widget) => (
+          <Link to={`/${widget.path}`} key={widget.path}>
+            <Image imageData={widget.image} />
+            <div className="info">
+              <h3>{widget.heading}</h3>
+              <hr />
+              <p>{widget.blurb}</p>
+            </div>
+          </Link>
+        ))}
+      </StyledLinks>
+      {!preview && <NextMeetingWidget />}
+    </Layout>
   );
 };
+
+const StyledLinks = styled.div`
+  display: flex;
+  padding: 0 1rem;
+  gap: 3rem;
+
+  @media ${device.mobile} {
+    gap: 1rem;
+    flex-flow: column nowrap;
+  }
+
+  & > a {
+    flex: 1;
+    background: ${colors.white};
+    overflow: hidden;
+    text-decoration: none;
+    border-radius: 0.3em;
+    box-shadow: 0 3px 6px 1px rgba(0, 0, 0, 0.1), 0 5px 15px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-flow: column nowrap;
+    position: relative;
+    & > .gatsby-image-wrapper {
+      height: 12rem;
+      @media ${device.mobile} {
+        height: 6rem;
+      }
+    }
+    & > .info {
+      padding: 1.5rem 1rem;
+      display: flex;
+      flex-flow: column nowrap;
+      justify-content: center;
+      align-items: center;
+      @media ${device.mobile} {
+        padding: 0.75rem 0.35rem 0.5rem;
+      }
+      & > h3 {
+        color: ${colors.darkBlue};
+        font-family: ${fonts.serif};
+        margin: 0;
+        text-transform: uppercase;
+        font-size: 1.15rem;
+        font-weight: normal;
+      }
+      & > hr {
+        border: none;
+        outline: none;
+        width: 50%;
+        height: 1px;
+        background: ${colors.lightGrey};
+        margin: 0.5rem 0;
+        @media ${device.mobile} {
+          display: none;
+        }
+      }
+      & > p {
+        color: ${colors.grey};
+        font-size: 0.85rem;
+        white-space: pre-wrap;
+        margin: 0.5rem 0;
+        text-align: center;
+      }
+    }
+  }
+`;
 
 const StyledWelcomeCard = styled.div`
   width: 100%;
   background: ${colors.white};
   border-radius: 0.3em;
   box-shadow: 0 3px 6px 1px rgba(0, 0, 0, 0.1), 0 5px 15px 4px rgba(0, 0, 0, 0.1);
-  padding: 1em;
-
+  padding: 1em 0;
+  @media ${device.mobile} {
+    box-shadow: none;
+    border-radius: 0;
+    padding: 1.5rem 1rem 1rem;
+  }
   & > .heading {
     display: flex;
     align-items: center;
     width: 80%;
+    @media ${device.mobile} {
+      width: 100%;
+    }
     margin: auto;
     & > hr {
       border: none;
@@ -61,18 +150,23 @@ const StyledWelcomeCard = styled.div`
     padding: 1em 2em 0;
     margin: auto;
     text-align: center;
-    & > div {
-      margin: 1em 0;
-      p {
-        margin: 1em 0;
-        font-size: 1.25em;
-        white-space: pre-wrap;
+    @media ${device.mobile} {
+      padding: 0;
+    }
+    p {
+      margin: 0.5rem 0 0;
+      white-space: pre-wrap;
+      font-size: 1.25em;
+      @media ${device.mobile} {
+        font-size: 0.875rem;
       }
     }
     & > i {
       font-family: ${fonts.display};
       font-size: 4em;
-      margin: -1em 0 1em;
+      @media ${device.mobile} {
+        font-size: 2rem;
+      }
     }
     & > a {
       display: block;

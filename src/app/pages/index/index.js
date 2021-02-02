@@ -1,16 +1,10 @@
 import React from "react";
 import { graphql } from "gatsby";
 
-import { Layout } from "components/Layout";
-
 import { Home } from "./Home";
 
-const HomePage = ({ data: { markdownRemark }, preview }) => {
-  return (
-    <Layout preview={preview} image={markdownRemark.frontmatter.image}>
-      <Home {...markdownRemark} />
-    </Layout>
-  );
+const HomePage = ({ data: { markdownRemark } }) => {
+  return <Home {...markdownRemark} />;
 };
 
 export default HomePage;
@@ -18,7 +12,6 @@ export default HomePage;
 export const pageQuery = graphql`
   query HomePage($slug: String) {
     markdownRemark(fields: { slug: { eq: $slug } }) {
-      html
       frontmatter {
         image {
           childImageSharp {
@@ -29,11 +22,24 @@ export const pageQuery = graphql`
         }
         welcomeWidget {
           heading
+          body
           signature
           link {
             path
             text
           }
+        }
+        linksWidget {
+          heading
+          blurb
+          image {
+            childImageSharp {
+              fluid(maxWidth: 320, quality: 100) {
+                ...GatsbyImageSharpFluid
+              }
+            }
+          }
+          path
         }
       }
     }

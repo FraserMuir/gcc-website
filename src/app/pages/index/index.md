@@ -1,4 +1,6 @@
 ---
+type: page
+templateKey: index
 image: /media/home.jpg
 welcomeWidget:
   heading: Welcome

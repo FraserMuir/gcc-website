@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import { GlobalStyle } from "../styles/global";
+import { device } from "styles/breakpoints";
+import { GlobalStyle } from "styles/global";
 
 import { Footer } from "./Footer";
 import { Image } from "./Image";
@@ -18,6 +19,11 @@ const StyledLayout = styled.div`
     justify-content: center;
     gap: 3em 0;
     margin: 3em auto;
+    @media ${device.mobile} {
+      max-width: 100%;
+      margin: 0 auto;
+      gap: 1.5em 0;
+    }
   }
 `;
 

@@ -5,5 +5,5 @@ export const GeneralPreview = ({ entry, getAsset, component: Component }) => {
   const data = entry.getIn(["data"]).toJS();
   if (!data) return null;
   console.log(data);
-  return <Component data={frontmatterWrapper(data, getAsset)} preview />;
+  return <Component frontmatter={frontmatterWrapper(data, getAsset)} preview />;
 };
