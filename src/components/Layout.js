@@ -17,20 +17,29 @@ const StyledLayout = styled.div`
     display: flex;
     flex-flow: column nowrap;
     justify-content: center;
-    gap: 3em 0;
     margin: 0 auto;
-    @media ${device.mobile} {
-      max-width: 100%;
-      margin: 0 auto;
-      gap: 1.5em 0;
-    }
     margin-top: calc(-90px);
     padding-top: calc(90px);
-    & > :first-child {
+    & > * {
       margin-top: 3em;
     }
     & > :last-child {
       margin-bottom: 3em;
+    }
+    @media ${device.mobile} {
+      max-width: 100%;
+      & > * {
+        margin-top: 2em;
+      }
+      & > :first-child {
+        margin-top: 0;
+      }
+      & > :last-child {
+        margin-bottom: 0;
+      }
+      & > :first-child :last-child {
+        margin: 2em 0;
+      }
     }
   }
 `;

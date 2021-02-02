@@ -143,16 +143,16 @@ const StyledWidget = styled.div`
       & > .location {
         display: flex;
         align-items: center;
-        gap: 0.75rem;
         padding: 0 1.5rem;
         @media ${device.tablet} {
-          gap: 0.35rem;
           padding: 0 0.25rem 0 1rem;
         }
         & > svg {
           color: ${colors.grey};
           font-size: 2rem;
+          margin-right: 0.75rem;
           @media ${device.tablet} {
+          margin-right: 0.35rem;
             font-size: 1.65rem;
           }
         }

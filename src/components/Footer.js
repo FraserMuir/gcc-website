@@ -23,8 +23,8 @@ const StyledFooter = styled.footer`
       align-items: center;
       & > .buttons {
         display: flex;
-        gap: 1rem;
         & > a {
+          margin-right: 1rem;
           border: 2px solid ${colors.grey};
           text-decoration: none;
           color: ${colors.white};
@@ -40,10 +40,10 @@ const StyledFooter = styled.footer`
       }
       & > .socials {
         display: flex;
-        gap: 1rem;
         img {
+          margin-left: 1rem;
           height: 2rem;
-          width: auto;
+          width: 2rem;
           filter: invert(1) brightness(0.6);
           transition: all 0.15s;
           &:hover {
@@ -77,13 +77,13 @@ export const Footer = () => {
           </div>
           <div className="socials">
             <a href="https://www.facebook.com/Garelochhead-Community-Council-1833115896902836/" target="_blank" rel="noreferrer noopener">
-              <img src={facebookIcon} alt="facebook icon" />
+              <img src={facebookIcon} alt="facebook icon" width="2rem" height="2rem" />
             </a>
             <a href="https://twitter.com/GarelochheadCC?lang=en-gb" target="_blank" rel="noreferrer noopener">
-              <img src={twitterIcon} alt="twitter icon" />
+              <img src={twitterIcon} alt="twitter icon" width="2rem" height="2rem" />
             </a>
             <a href="https://www.instagram.com/garelochheadcommunity/?hl=en" target="_blank" rel="noreferrer noopener">
-              <img src={instagramIcon} alt="instagram icon" />
+              <img src={instagramIcon} alt="instagram icon" width="2rem" height="2rem" />
             </a>
           </div>
         </div>
