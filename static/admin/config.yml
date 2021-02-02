@@ -26,7 +26,7 @@ collections:
   - name: "pages"
     label: "Pages"
     files:
-      - file: "src/data/pages/index/index.md"
+      - file: "src/app/pages/index/index.md"
         label: "Home Page"
         name: "index"
         fields:
