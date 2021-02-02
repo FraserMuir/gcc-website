@@ -32,7 +32,7 @@ export const Home = ({ frontmatter, preview }) => {
           <Link to={`/${widget.path}`} key={widget.path}>
             <Image imageData={widget.image} />
             <div className="info">
-              <h3>{widget.heading}</h3>
+              <div>{widget.heading}</div>
               <hr />
               <p>{widget.blurb}</p>
             </div>
@@ -95,7 +95,7 @@ const StyledLinks = styled.div`
       @media ${device.mobile} {
         padding: 0.75rem 0.35rem 0.5rem;
       }
-      & > h3 {
+      & > div {
         color: ${colors.darkBlue};
         font-family: ${fonts.serif};
         margin: 0;

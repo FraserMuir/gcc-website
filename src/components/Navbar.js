@@ -305,6 +305,7 @@ const StyledToggle = styled.input`
         flex: 0;
         width: 100%;
         background: none;
+        padding: 1rem;
         &:before {
           display: none;
         }
