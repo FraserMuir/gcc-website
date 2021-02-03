@@ -7,7 +7,7 @@ export const NextMeeting = ({ frontmatter, preview }) => {
 
   return (
     <Layout preview={preview} image={image}>
-      {!preview && <NextMeetingWidget />}{" "}
+      {!preview && <NextMeetingWidget />}
     </Layout>
   );
 };

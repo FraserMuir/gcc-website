@@ -9,7 +9,9 @@ import { colors } from "styles/colors";
 import { fonts } from "styles/fonts";
 import { device } from "styles/breakpoints";
 
-export const NextMeeting = ({ agenda, date, image, string }) => {
+export const NextMeeting = ({ frontmatter }) => {
+  const { agenda, date, image, string } = frontmatter || {};
+
   return (
     <StyledWidget>
       <Image imageData={image} />
@@ -29,7 +31,7 @@ export const NextMeeting = ({ agenda, date, image, string }) => {
             <p>{string}</p>
           </div>
         </div>
-        <a className="agenda" href={agenda.publicURL} target="_blank" rel="noreferrer noopener">
+        <a className="agenda" href={agenda.publicURL || `${window.location.origin}/media/${agenda.path.split("/").slice(-1)[0]}`} target="_blank" rel="noreferrer noopener">
           Agenda
         </a>
       </div>
@@ -154,6 +156,8 @@ const StyledWidget = styled.div`
           color: ${colors.grey};
           font-size: 2rem;
           margin-right: 0.75rem;
+          width: 1em;
+          height: 1em;
           @media ${device.tablet} {
           margin-right: 0.35rem;
             font-size: 1.65rem;

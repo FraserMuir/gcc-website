@@ -17,7 +17,7 @@ collections:
     files:
       - file: "src/app/widgets/next-meeting/index.md"
         label: "Next Meeting"
-        name: "next-meeting"
+        name: "next-meeting-widget"
         fields:
           - { label: "Date", name: "date", widget: "datetime" }
           - { label: "Location", name: "string", widget: "string" }
