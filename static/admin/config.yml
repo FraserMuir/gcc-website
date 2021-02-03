@@ -23,6 +23,11 @@ collections:
           - { label: "Location", name: "string", widget: "string" }
           - { label: "Agenda", name: "agenda", widget: "file" }
           - { label: "Image", name: "image", widget: "image" }
+      - file: "src/app/widgets/historical-meetings/index.md"
+        label: "Historical Meetings"
+        name: "historical-meetings-widget"
+        fields:
+          - { label: "Meetings", name: "meetings", widget: "list", fields: [{ label: "PDF File", name: "file", widget: "file" }, { label: "Date", name: "date", widget: "date" }] }
   - name: "pages"
     label: "Pages"
     files:
