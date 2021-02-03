@@ -147,6 +147,9 @@ const StyledWidget = styled.div`
         @media ${device.tablet} {
           padding: 0 0.25rem 0 1rem;
         }
+        @media ${device.tablet} {
+          padding: 0 0.25rem 0 0.5rem;
+        }
         & > svg {
           color: ${colors.grey};
           font-size: 2rem;
@@ -157,11 +160,15 @@ const StyledWidget = styled.div`
           }
         }
         p {
+          white-space: nowrap;
           margin: 0.35rem 0;
           color: ${colors.grey};
           font-size: 1.15rem;
           @media ${device.tablet} {
             font-size: 1rem;
+          }
+          @media ${device.mobile} {
+            font-size: 0.8rem;
           }
         }
       }

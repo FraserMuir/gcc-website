@@ -24,6 +24,7 @@ const StyledFooter = styled.footer`
       & > .buttons {
         display: flex;
         & > a {
+          white-space: nowrap;
           margin-right: 1rem;
           border: 2px solid ${colors.grey};
           text-decoration: none;
