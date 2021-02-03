@@ -1,16 +1,10 @@
 import React from "react";
 import { graphql } from "gatsby";
 
-import { Layout } from "components/Layout";
-
 import { HistoricalMeetings } from "./HistoricalMeetings";
 
-const HistoricalMeetingsPage = ({ data: { markdownRemark }, preview }) => {
-  return (
-    <Layout preview={preview} image={markdownRemark.frontmatter.image}>
-      <HistoricalMeetings {...markdownRemark.frontmatter} />
-    </Layout>
-  );
+const HistoricalMeetingsPage = ({ data: { markdownRemark } }) => {
+  return <HistoricalMeetings {...markdownRemark} />
 };
 
 export default HistoricalMeetingsPage;

@@ -1,16 +1,10 @@
 import React from "react";
 import { graphql } from "gatsby";
 
-import { Layout } from "components/Layout";
-
 import { Links } from "./Links";
 
-const LinksPage = ({ data: { markdownRemark }, preview }) => {
-  return (
-    <Layout preview={preview} image={markdownRemark.frontmatter.image}>
-      <Links {...markdownRemark.frontmatter} />
-    </Layout>
-  );
+const LinksPage = ({ data: { markdownRemark } }) => {
+  return <Links {...markdownRemark} />
 };
 
 export default LinksPage;
