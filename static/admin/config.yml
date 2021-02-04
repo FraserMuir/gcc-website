@@ -33,7 +33,7 @@ collections:
               widget: "list",
               label_singular: "Meeting Agenda",
               summary: "Meeting {{date | date('YYYY-MM-DD')}}",
-              fields: [{ label: "PDF File", name: "file", widget: "file" }, { label: "Date", name: "date", widget: "date" }],
+              fields: [{ label: "PDF File", name: "file", widget: "file" }, { label: "Date", name: "date", widget: "datetime" }],
             }
   - name: "pages"
     label: "Pages"
@@ -93,6 +93,20 @@ collections:
           - { label: "Template Key", name: templateKey, widget: "hidden", default: "gallery" }
           - { label: "Type", name: type, widget: "hidden", default: "page" }
           - { label: "Main Image", name: image, widget: image }
+          - {
+              label: "Photos",
+              name: "photos",
+              widget: "list",
+              label_singular: "Photo",
+              summary: "{{title}}",
+              fields:
+                [
+                  { label: "Photo", name: "photo", widget: "file" },
+                  { label: "Caption", name: "caption", widget: "string" },
+                  { label: "Date (optional)", name: "date", widget: "datetime" },
+                  { label: "Photographer Credit (optional)", name: "credit", widget: "string" },
+                ],
+            }
       - file: "src/app/pages/links/index.md"
         label: "Links"
         name: "links"
