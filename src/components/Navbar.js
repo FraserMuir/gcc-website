@@ -180,7 +180,6 @@ const StyledSubMenu = styled.div`
   width: 100%;
   padding: 2.2em 0 0.2em;
   background: rgba(255, 255, 255, 0.8);
-  backdrop-filter: blur(5px);
   visibility: hidden;
   opacity: 0;
   z-index: 99;

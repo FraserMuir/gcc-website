@@ -17,12 +17,24 @@ collections:
     files:
       - file: "src/app/widgets/next-meeting/index.md"
         label: "Next Meeting"
-        name: "next-meeting"
+        name: "next-meeting-widget"
         fields:
           - { label: "Date", name: "date", widget: "datetime" }
           - { label: "Location", name: "string", widget: "string" }
           - { label: "Agenda", name: "agenda", widget: "file" }
           - { label: "Image", name: "image", widget: "image" }
+      - file: "src/app/widgets/historical-meetings/index.md"
+        label: "Historical Meetings"
+        name: "historical-meetings-widget"
+        fields:
+          - {
+              label: "Meetings",
+              name: "meetings",
+              widget: "list",
+              label_singular: "Meeting Agenda",
+              summary: "Meeting {{date | date('YYYY-MM-DD')}}",
+              fields: [{ label: "PDF File", name: "file", widget: "file" }, { label: "Date", name: "date", widget: "date" }],
+            }
   - name: "pages"
     label: "Pages"
     files:
@@ -30,7 +42,7 @@ collections:
         label: "Home Page"
         name: "index"
         fields:
-          - { label: "Template Key", name: templateKey, widget: "hidden" }
+          - { label: "Template Key", name: templateKey, widget: "hidden", default: "index" }
           - { label: "Type", name: type, widget: "hidden", default: "page" }
           - { label: "Main Image", name: image, widget: image }
           - {
@@ -46,9 +58,10 @@ collections:
                 ],
             }
           - {
-              label: "Links Widget",
+              label: "Link Cards",
               name: linksWidget,
               widget: list,
+              label_singular: "Card",
               min: 2,
               max: 4,
               fields:
@@ -59,3 +72,59 @@ collections:
                   { label: Path, name: path, widget: string },
                 ],
             }
+      - file: "src/app/pages/next-meeting/index.md"
+        label: "Next Meeting"
+        name: "next-meeting"
+        fields:
+          - { label: "Template Key", name: templateKey, widget: "hidden", default: "next-meeting" }
+          - { label: "Type", name: type, widget: "hidden", default: "page" }
+          - { label: "Main Image", name: image, widget: image }
+      - file: "src/app/pages/historical-meetings/index.md"
+        label: "Historical Meetings"
+        name: "historical-meetings"
+        fields:
+          - { label: "Template Key", name: templateKey, widget: "hidden", default: "historical-meetings" }
+          - { label: "Type", name: type, widget: "hidden", default: "page" }
+          - { label: "Main Image", name: image, widget: image }
+      - file: "src/app/pages/gallery/index.md"
+        label: "Gallery"
+        name: "gallery"
+        fields:
+          - { label: "Template Key", name: templateKey, widget: "hidden", default: "gallery" }
+          - { label: "Type", name: type, widget: "hidden", default: "page" }
+          - { label: "Main Image", name: image, widget: image }
+      - file: "src/app/pages/links/index.md"
+        label: "Links"
+        name: "links"
+        fields:
+          - { label: "Template Key", name: templateKey, widget: "hidden", default: "links" }
+          - { label: "Type", name: type, widget: "hidden", default: "page" }
+          - { label: "Main Image", name: image, widget: image }
+      - file: "src/app/pages/events/index.md"
+        label: "Events"
+        name: "events"
+        fields:
+          - { label: "Template Key", name: templateKey, widget: "hidden", default: "events" }
+          - { label: "Type", name: type, widget: "hidden", default: "page" }
+          - { label: "Main Image", name: image, widget: image }
+      - file: "src/app/pages/news/index.md"
+        label: "News"
+        name: "news"
+        fields:
+          - { label: "Template Key", name: templateKey, widget: "hidden", default: "news" }
+          - { label: "Type", name: type, widget: "hidden", default: "page" }
+          - { label: "Main Image", name: image, widget: image }
+      - file: "src/app/pages/about-us/index.md"
+        label: "About Us"
+        name: "about-us"
+        fields:
+          - { label: "Template Key", name: templateKey, widget: "hidden", default: "about-us" }
+          - { label: "Type", name: type, widget: "hidden", default: "page" }
+          - { label: "Main Image", name: image, widget: image }
+      - file: "src/app/pages/contact-us/index.md"
+        label: "Contact Us"
+        name: "contact-us"
+        fields:
+          - { label: "Template Key", name: templateKey, widget: "hidden", default: "contact-us" }
+          - { label: "Type", name: type, widget: "hidden", default: "page" }
+          - { label: "Main Image", name: image, widget: image }

@@ -1,16 +1,11 @@
 import React from "react";
 import { graphql } from "gatsby";
 
-import { Layout } from "components/Layout";
 
 import { Events } from "./Events";
 
-const EventsPage = ({ data: { markdownRemark }, preview }) => {
-  return (
-    <Layout preview={preview} image={markdownRemark.frontmatter.image}>
-      <Events {...markdownRemark.frontmatter} />
-    </Layout>
-  );
+const EventsPage = ({ data: { markdownRemark } }) => {
+  return <Events {...markdownRemark} />
 };
 
 export default EventsPage;

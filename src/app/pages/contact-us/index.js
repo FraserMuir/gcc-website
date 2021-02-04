@@ -1,16 +1,10 @@
 import React from "react";
 import { graphql } from "gatsby";
 
-import { Layout } from "components/Layout";
-
 import { ContactUs } from "./ContactUs";
 
-const ContactUsPage = ({ data: { markdownRemark }, preview }) => {
-  return (
-    <Layout preview={preview} image={markdownRemark.frontmatter.image}>
-      <ContactUs {...markdownRemark.frontmatter} />
-    </Layout>
-  );
+const ContactUsPage = ({ data: { markdownRemark } }) => {
+  return <ContactUs {...markdownRemark} />
 };
 
 export default ContactUsPage;

@@ -1,16 +1,10 @@
 import React from "react";
 import { graphql } from "gatsby";
 
-import { Layout } from "components/Layout";
-
 import { Gallery } from "./Gallery";
 
-const GalleryPage = ({ data: { markdownRemark }, preview }) => {
-  return (
-    <Layout preview={preview} image={markdownRemark.frontmatter.image}>
-      <Gallery {...markdownRemark.frontmatter} />
-    </Layout>
-  );
+const GalleryPage = ({ data: { markdownRemark } }) => {
+  return <Gallery {...markdownRemark} />
 };
 
 export default GalleryPage
