@@ -27,7 +27,14 @@ collections:
         label: "Historical Meetings"
         name: "historical-meetings-widget"
         fields:
-          - { label: "Meetings", name: "meetings", widget: "list", fields: [{ label: "PDF File", name: "file", widget: "file" }, { label: "Date", name: "date", widget: "date" }] }
+          - {
+              label: "Meetings",
+              name: "meetings",
+              widget: "list",
+              label_singular: "Meeting Agenda",
+              summary: "Meeting {{date | date('YYYY-MM-DD')}}",
+              fields: [{ label: "PDF File", name: "file", widget: "file" }, { label: "Date", name: "date", widget: "date" }],
+            }
   - name: "pages"
     label: "Pages"
     files:
@@ -51,9 +58,10 @@ collections:
                 ],
             }
           - {
-              label: "Links Widget",
+              label: "Link Cards",
               name: linksWidget,
               widget: list,
+              label_singular: "Card",
               min: 2,
               max: 4,
               fields:
