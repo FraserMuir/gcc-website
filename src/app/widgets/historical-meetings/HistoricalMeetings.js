@@ -24,8 +24,8 @@ export const HistoricalMeetings = ({ frontmatter }) => {
     <StyledContainer>
       {Object.entries(yearMap)
         .sort(([yearA], [yearB]) => yearB - yearA)
-        .map(([year, items]) => (
-          <Year key={year} year={year} items={items} />
+        .map(([year, items], i) => (
+          <Year key={year} year={year} items={items} index={i} />
         ))}
     </StyledContainer>
   );
@@ -38,8 +38,8 @@ const StyledContainer = styled.div`
   box-shadow: 0 3px 6px 1px rgba(0, 0, 0, 0.1), 0 5px 15px 4px rgba(0, 0, 0, 0.1);
 `;
 
-const Year = ({ year, items }) => {
-  const [isExpanded, setIsExanded] = useState(year === moment().format("YYYY"));
+const Year = ({ year, items, index }) => {
+  const [isExpanded, setIsExanded] = useState(index === 0);
   const [maxHeight, setMaxHeight] = useState(null);
 
   const headingRef = useRef(null);
@@ -81,7 +81,7 @@ const Year = ({ year, items }) => {
       </div>
       <div className="items" ref={itemsRef}>
         {items.map((meeting) => (
-          <a key={meeting.date} href={meeting.file.publicURL} tabIndex={isExpanded ? 0 : -1} target="_blank" rel="noreferrer noopener">
+          <a key={meeting.date} href={meeting.file?.publicURL} tabIndex={isExpanded ? 0 : -1} target="_blank" rel="noreferrer noopener">
             {moment(meeting.date).format("MMMM Do")}
           </a>
         ))}
