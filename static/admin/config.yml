@@ -98,13 +98,13 @@ collections:
               name: "photos",
               widget: "list",
               label_singular: "Photo",
-              summary: "{{title}}",
+              summary: "{{caption}}",
               fields:
                 [
                   { label: "Photo", name: "photo", widget: "file" },
                   { label: "Caption", name: "caption", widget: "string" },
-                  { label: "Date (optional)", name: "date", widget: "datetime" },
-                  { label: "Photographer Credit (optional)", name: "credit", widget: "string" },
+                  { label: "Date", name: "date", widget: "datetime", default: "", required: false, },
+                  { label: "Photographer Credit", name: "credit", widget: "string", required: false, },
                 ],
             }
       - file: "src/app/pages/links/index.md"
