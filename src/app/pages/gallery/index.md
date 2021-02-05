@@ -14,7 +14,4 @@ photos:
   - date: ""
     photo: /media/box-packing-volunteers.jpg
     caption: Volunteers packing veg boxes for community
-  - date: ""
-    photo: /media/next-meeting.jpg
-    caption: Other photo
 ---

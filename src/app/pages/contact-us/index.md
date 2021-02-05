@@ -1,21 +1,16 @@
 ---
-type: page
 templateKey: contact-us
-image: /media/home.jpg
+type: page
+title: Contact Us
+image: /media/red.jpg
 welcomeWidget:
   heading: Contact Us
-  body: >-
-    Welcome to the new Garelochhead Community Council web site.
+  body: |-
+    Secretary: [secretary@garelochhead.info](mailto:secretary@garelochhead.info)
 
+    Planning: [planning@garelochhead.info](mailto:planning@garelochhead.info)
 
-    On these pages, we aim to offer easy access to the recent and current activities of the Community Council, as well as useful links to what’s happening in general in and around Garelochhead.
+    Treasurer: [treasurer@garelochhead.info](mailto:treasurer@garelochhead.info)
 
-
-    We are also planning to offer (soon) a directory of local businesses, and lists of links to helpful contacts – we hope these might benefit residents and visitors alike.
-
-
-    This is a brand new venture for us – please do get in touch to let us know what you would like to see on the site!
-
-
-    Kind regards,
+    Convenor: [convenor@garelochhead.info](mailto:convenor@garelochhead.info)
 ---

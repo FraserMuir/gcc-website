@@ -1,21 +1,25 @@
 ---
-type: page
 templateKey: events
+type: page
 image: /media/water.jpg
 welcomeWidget:
   heading: Events
-  body: >-
-    Welcome to the new Garelochhead Community Council web site.
+  body: |-
+    # Meeting Dates 2019/20
 
+    16th June 2020 - Virtual - Public
 
-    On these pages, we aim to offer easy access to the recent and current activities of the Community Council, as well as useful links to what’s happening in general in and around Garelochhead.
+    18th August 2020 - Virtual - Public
 
+    15th September 2020 - Public
 
-    We are also planning to offer (soon) a directory of local businesses, and lists of links to helpful contacts – we hope these might benefit residents and visitors alike.
+    17th November 2020 - Public
 
+    19th January 2021 - Public
 
-    This is a brand new venture for us – please do get in touch to let us know what you would like to see on the site!
+    16th March 2021 - Public
 
+    18th May 2021 - Public
 
-    Kind regards,
+    15th June 2021 - AMG & Public meeting
 ---

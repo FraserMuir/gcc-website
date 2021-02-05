@@ -1,21 +1,21 @@
 ---
-type: page
 templateKey: links
+type: page
 image: /media/hills.jpg
 welcomeWidget:
   heading: Links
   body: >-
-    Welcome to the new Garelochhead Community Council web site.
+    Please see below some usual links for local service and information.
 
 
-    On these pages, we aim to offer easy access to the recent and current activities of the Community Council, as well as useful links to what’s happening in general in and around Garelochhead.
+    We do try to keep these links up to date but some details may have changed so please do check directly with the provider.
 
 
-    We are also planning to offer (soon) a directory of local businesses, and lists of links to helpful contacts – we hope these might benefit residents and visitors alike.
+    [Drone Code](https://garelochhead.info/wp-content/uploads/Drone-Code_March19.pdf)
 
 
-    This is a brand new venture for us – please do get in touch to let us know what you would like to see on the site!
+    [MyBus Service R950](https://garelochhead.info/wp-content/uploads/MyBusService_R950.pdf)
 
 
-    Kind regards,
+    [Rural Watch SignUp](https://garelochhead.info/wp-content/uploads/Sign-up-to-rural-watch.pdf)
 ---
