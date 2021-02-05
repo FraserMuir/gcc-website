@@ -4,5 +4,5 @@ type: page
 image: /media/snowy.jpg
 welcomeWidget:
   heading: News
-  body: Coming Soon...
+  body: Coming Soon Test...
 ---
