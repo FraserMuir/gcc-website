@@ -16,9 +16,7 @@ photos:
     caption: Volunteers packing veg boxes for community
   - date: 2020-12-24T00:00:00.000Z
     photo: /media/cheque-presentation-to-garelochhead-community-council-2096-.jpg
-    caption: "Councillor George Freeman and Margaret Stratton presenting a donation
-      on behalf of The Gibson Benevolent Trust to GCC Convenor Watson Robinson
-      for the Garelochhead festive decorations. "
+    caption: "Members of The Gibson Benevolent Trust donation "
   - date: 2019-12-01T00:00:00.000Z
     photo: /media/gcc-xmas-tree-marines-2019.jpg
     caption: Marines putting up Garelochhead's Christmas Tree
