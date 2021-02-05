@@ -94,6 +94,8 @@ const StyledYear = styled.div`
   width: 100%;
   overflow: hidden;
   max-height: ${(props) => props.maxheight}px;
+  will-change: height, max-height;
+  transform: translate3d(0, 0, 10px);
   transition: max-height 0.2s;
   &:not(:last-child) {
     border-bottom: 1px solid rgba(0, 0, 0, 0.125);
