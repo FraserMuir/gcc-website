@@ -55,8 +55,10 @@ const Photo = ({ photo, caption, date, credit }) => {
                 {caption}
               </p>
             )}
-            {date && <p className="date">{moment(date).format("Do MMM YYYY")}</p>}
-            {credit && <p className="credit">Photo credit: {credit}</p>}
+            <div className="bottom">
+              {date && <p className="date">{moment(date).format("Do MMM YYYY")}</p>}
+              {credit && <p className="credit">Photo credit: {credit}</p>}
+            </div>
           </div>
         )}
       </div>
@@ -111,11 +113,16 @@ const StyledPhoto = styled.div`
         margin: 0;
       }
 
-      & > .credit {
-        font-family: ${fonts.sansSerif};
-        font-size: 0.6rem;
-        text-align: left;
-        margin: 0.2rem;
+      & > .bottom {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        & > .credit, & > .date {
+          font-family: ${fonts.sansSerif};
+          font-size: 0.6rem;
+          text-align: left;
+          margin: 0.2rem;
+        }
       }
     }
   }
