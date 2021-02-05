@@ -4,7 +4,7 @@ import { graphql } from "gatsby";
 import { News } from "./News";
 
 const NewsPage = ({ data: { markdownRemark } }) => {
-  return <News {...markdownRemark} />
+  return <News {...markdownRemark} />;
 };
 
 export default NewsPage;
@@ -19,6 +19,10 @@ export const pageQuery = graphql`
               ...GatsbyImageSharpFluid
             }
           }
+        }
+        welcomeWidget {
+          heading
+          body
         }
       }
     }

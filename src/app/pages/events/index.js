@@ -1,11 +1,10 @@
 import React from "react";
 import { graphql } from "gatsby";
 
-
 import { Events } from "./Events";
 
 const EventsPage = ({ data: { markdownRemark } }) => {
-  return <Events {...markdownRemark} />
+  return <Events {...markdownRemark} />;
 };
 
 export default EventsPage;
@@ -20,6 +19,10 @@ export const pageQuery = graphql`
               ...GatsbyImageSharpFluid
             }
           }
+        }
+        welcomeWidget {
+          heading
+          body
         }
       }
     }
