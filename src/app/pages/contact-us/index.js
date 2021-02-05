@@ -4,7 +4,7 @@ import { graphql } from "gatsby";
 import { ContactUs } from "./ContactUs";
 
 const ContactUsPage = ({ data: { markdownRemark } }) => {
-  return <ContactUs {...markdownRemark} />
+  return <ContactUs {...markdownRemark} />;
 };
 
 export default ContactUsPage;
@@ -19,6 +19,10 @@ export const pageQuery = graphql`
               ...GatsbyImageSharpFluid
             }
           }
+        }
+        welcomeWidget {
+          heading
+          body
         }
       }
     }

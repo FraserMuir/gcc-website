@@ -5,6 +5,7 @@ import { Layout } from "components/Layout";
 import { fonts } from "styles/fonts";
 import { colors } from "styles/colors";
 import { device } from "styles/breakpoints";
+import { Markdown } from "components/Markdown";
 
 export const News = ({ frontmatter, preview }) => {
   const { image, welcomeWidget } = frontmatter || {};
@@ -18,9 +19,7 @@ export const News = ({ frontmatter, preview }) => {
           <h1>{heading}</h1>
           <hr />
         </div>
-        <div className="content">
-          <p>{body}</p>
-        </div>
+        <Markdown content={body} />
       </StyledNewsCard>
     </Layout>
   );
