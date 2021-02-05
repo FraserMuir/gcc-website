@@ -21,7 +21,7 @@ collections:
         fields:
           - { label: "Date", name: "date", widget: "datetime" }
           - { label: "Location", name: "string", widget: "string" }
-          - { label: "Agenda", name: "agenda", widget: "file" }
+          - { label: "Agenda", name: "agenda", widget: "file", default: "/media/blank-agenda.pdf" }
           - { label: "Image", name: "image", widget: "image" }
       - file: "src/app/widgets/historical-meetings/index.md"
         label: "Historical Meetings"
@@ -103,8 +103,8 @@ collections:
                 [
                   { label: "Photo", name: "photo", widget: "file" },
                   { label: "Caption", name: "caption", widget: "string" },
-                  { label: "Date", name: "date", widget: "datetime", default: "", required: false, },
-                  { label: "Photographer Credit", name: "credit", widget: "string", required: false, },
+                  { label: "Date", name: "date", widget: "datetime", default: "", required: false },
+                  { label: "Photographer Credit", name: "credit", widget: "string", required: false },
                 ],
             }
       - file: "src/app/pages/links/index.md"
@@ -114,6 +114,7 @@ collections:
           - { label: "Template Key", name: templateKey, widget: "hidden", default: "links" }
           - { label: "Type", name: type, widget: "hidden", default: "page" }
           - { label: "Main Image", name: image, widget: image }
+          - { label: "Links Widget", name: welcomeWidget, widget: object, fields: [{ label: Heading, name: heading, widget: string }, { label: Body, name: body, widget: markdown }] }
       - file: "src/app/pages/events/index.md"
         label: "Events"
         name: "events"
@@ -121,6 +122,7 @@ collections:
           - { label: "Template Key", name: templateKey, widget: "hidden", default: "events" }
           - { label: "Type", name: type, widget: "hidden", default: "page" }
           - { label: "Main Image", name: image, widget: image }
+          - { label: "Events Widget", name: welcomeWidget, widget: object, fields: [{ label: Heading, name: heading, widget: string }, { label: Body, name: body, widget: markdown }] }
       - file: "src/app/pages/news/index.md"
         label: "News"
         name: "news"
@@ -128,6 +130,7 @@ collections:
           - { label: "Template Key", name: templateKey, widget: "hidden", default: "news" }
           - { label: "Type", name: type, widget: "hidden", default: "page" }
           - { label: "Main Image", name: image, widget: image }
+          - { label: "News Widget", name: welcomeWidget, widget: object, fields: [{ label: Heading, name: heading, widget: string }, { label: Body, name: body, widget: markdown }] }
       - file: "src/app/pages/about-us/index.md"
         label: "About Us"
         name: "about-us"
@@ -135,6 +138,7 @@ collections:
           - { label: "Template Key", name: templateKey, widget: "hidden", default: "about-us" }
           - { label: "Type", name: type, widget: "hidden", default: "page" }
           - { label: "Main Image", name: image, widget: image }
+          - { label: "About Us", name: welcomeWidget, widget: object, fields: [{ label: Heading, name: heading, widget: string }, { label: Body, name: body, widget: markdown }] }
       - file: "src/app/pages/contact-us/index.md"
         label: "Contact Us"
         name: "contact-us"
@@ -142,3 +146,4 @@ collections:
           - { label: "Template Key", name: templateKey, widget: "hidden", default: "contact-us" }
           - { label: "Type", name: type, widget: "hidden", default: "page" }
           - { label: "Main Image", name: image, widget: image }
+          - { label: "Contact Us", name: welcomeWidget, widget: object, fields: [{ label: Heading, name: heading, widget: string }, { label: Body, name: body, widget: markdown }] }

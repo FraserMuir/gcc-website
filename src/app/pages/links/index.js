@@ -4,7 +4,7 @@ import { graphql } from "gatsby";
 import { Links } from "./Links";
 
 const LinksPage = ({ data: { markdownRemark } }) => {
-  return <Links {...markdownRemark} />
+  return <Links {...markdownRemark} />;
 };
 
 export default LinksPage;
@@ -19,6 +19,10 @@ export const pageQuery = graphql`
               ...GatsbyImageSharpFluid
             }
           }
+        }
+        welcomeWidget {
+          heading
+          body
         }
       }
     }

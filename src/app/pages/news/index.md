@@ -1,6 +1,8 @@
 ---
-type: page
 templateKey: news
-title: News
+type: page
 image: /media/snowy.jpg
+welcomeWidget:
+  heading: News
+  body: Coming Soon...
 ---

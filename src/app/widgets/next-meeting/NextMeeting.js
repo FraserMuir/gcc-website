@@ -8,6 +8,7 @@ import { Image } from "components/Image";
 import { colors } from "styles/colors";
 import { fonts } from "styles/fonts";
 import { device } from "styles/breakpoints";
+import { getPublicUrl } from "helpers/getPublicUrl";
 
 export const NextMeeting = ({ frontmatter }) => {
   const { agenda, date, image, string } = frontmatter || {};
@@ -31,7 +32,7 @@ export const NextMeeting = ({ frontmatter }) => {
             <p>{string}</p>
           </div>
         </div>
-        <a className="agenda" href={agenda.publicURL || `${window.location.origin}/media/${agenda.path.split("/").slice(-1)[0]}`} target="_blank" rel="noreferrer noopener">
+        <a className="agenda" href={getPublicUrl(agenda)?.url} target="_blank" rel="noreferrer noopener">
           Agenda
         </a>
       </div>

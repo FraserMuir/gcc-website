@@ -4,7 +4,7 @@ import { graphql } from "gatsby";
 import { AboutUs } from "./AboutUs";
 
 const AboutUsPage = ({ data: { markdownRemark } }) => {
-  return <AboutUs {...markdownRemark} />
+  return <AboutUs {...markdownRemark} />;
 };
 
 export default AboutUsPage;
@@ -19,6 +19,10 @@ export const pageQuery = graphql`
               ...GatsbyImageSharpFluid
             }
           }
+        }
+        welcomeWidget {
+          heading
+          body
         }
       }
     }
