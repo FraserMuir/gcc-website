@@ -11,7 +11,7 @@ photos:
     photo: /media/reservoir-near-garelochhead.jpg
     caption: Reservoir near Garelochhead
     credit: Carol Spencer
-  - date: ""
+  - date: 2020-05-11T23:00:00.000Z
     photo: /media/box-packing-volunteers.jpg
     caption: Volunteers packing veg boxes for community
   - date: 2020-12-24T00:00:00.000Z
@@ -19,4 +19,7 @@ photos:
     caption: "Councillor George Freeman and Margaret Stratton presenting a donation
       on behalf of The Gibson Benevolent Trust to GCC Convenor Watson Robinson
       for the Garelochhead festive decorations. "
+  - date: 2019-12-01T00:00:00.000Z
+    photo: /media/gcc-xmas-tree-marines-2019.jpg
+    caption: Marines putting up Garelochhead's Christmas Tree
 ---
