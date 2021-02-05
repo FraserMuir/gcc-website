@@ -21,7 +21,7 @@ collections:
         fields:
           - { label: "Date", name: "date", widget: "datetime" }
           - { label: "Location", name: "string", widget: "string" }
-          - { label: "Agenda", name: "agenda", widget: "file" }
+          - { label: "Agenda", name: "agenda", widget: "file", default: "/media/blank-agenda.pdf" }
           - { label: "Image", name: "image", widget: "image" }
       - file: "src/app/widgets/historical-meetings/index.md"
         label: "Historical Meetings"

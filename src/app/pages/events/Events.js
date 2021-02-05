@@ -62,10 +62,9 @@ const StyledEventsCard = styled.div`
     }
   }
 
-  & > .content {
+  & > .markdown {
     padding: 1em 2em 0;
     margin: auto;
-    text-align: center;
     @media ${device.mobile} {
       padding: 0;
     }
