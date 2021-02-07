@@ -20,4 +20,7 @@ photos:
   - date: 2019-12-01T00:00:00.000Z
     photo: /media/gcc-xmas-tree-marines-2019.jpg
     caption: Marines putting up Garelochhead's Christmas Tree
+  - date: 2020-06-03T23:00:00.000Z
+    photo: /media/covid-bags-june-2020.jpg
+    caption: "Masks, information, fruit and veg bags being prepared "
 ---
