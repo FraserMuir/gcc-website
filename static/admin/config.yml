@@ -31,9 +31,10 @@ collections:
               label: "Meetings",
               name: "meetings",
               widget: "list",
+              add_to_top: true,
               label_singular: "Meeting Agenda",
               summary: "Meeting {{date | date('YYYY-MM-DD')}}",
-              fields: [{ label: "PDF File", name: "file", widget: "file" }, { label: "Date", name: "date", widget: "datetime" }],
+              fields: [{ label: "PDF File", name: "file", widget: "file" }, { label: "Date", name: "date", widget: "datetime", time_format: false }],
             }
   - name: "pages"
     label: "Pages"
@@ -97,13 +98,15 @@ collections:
               label: "Photos",
               name: "photos",
               widget: "list",
+              add_to_top: true,
               label_singular: "Photo",
               summary: "{{caption}}",
               fields:
                 [
                   { label: "Photo", name: "photo", widget: "file" },
                   { label: "Caption", name: "caption", widget: "string" },
-                  { label: "Date", name: "date", widget: "datetime", default: "", required: false },
+                  { label: "Position", name: "position", widget: "select", options: ["top", "bottom"], default: "bottom" },
+                  { label: "Date", name: "date", widget: "datetime", default: "", required: false, time_format: false },
                   { label: "Photographer Credit", name: "credit", widget: "string", required: false },
                 ],
             }

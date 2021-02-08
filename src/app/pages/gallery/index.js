@@ -23,11 +23,13 @@ export const pageQuery = graphql`
         photos {
           photo {
             childImageSharp {
-              fluid(maxWidth: 1000, quality: 80) {
+              fluid(maxWidth: 3000, quality: 100) {
                 ...GatsbyImageSharpFluid
               }
             }
+            name
           }
+          position
           caption
           date
           credit
