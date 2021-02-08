@@ -19,7 +19,7 @@ import { SinglePhoto } from "./SinglePhoto";
 export const Gallery = ({ frontmatter, preview }) => {
   useScrollRestoration("gallery-scroll");
 
-  const params = parse(window?.location?.search);
+  const params = parse(typeof window !== "undefined" ? window?.location?.search : "");
 
   const { image, photos } = frontmatter || {};
 
