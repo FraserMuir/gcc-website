@@ -15,19 +15,11 @@ module.exports = {
     FAST_REFRESH: true,
   },
   plugins: [
-    "gatsby-plugin-styled-components",
-    "gatsby-plugin-react-helmet",
     {
-      resolve: "gatsby-plugin-root-import",
+      resolve: "gatsby-source-filesystem",
       options: {
-        src: path.join(__dirname, "src"),
-
-        app: path.join(__dirname, "src/app"),
-        components: path.join(__dirname, "src/components"),
-        data: path.join(__dirname, "src/data"),
-        helpers: path.join(__dirname, "src/helpers"),
-        images: path.join(__dirname, "src/images"),
-        styles: path.join(__dirname, "src/styles"),
+        path: `${__dirname}/src/images`,
+        name: "images",
       },
     },
     {
@@ -52,24 +44,27 @@ module.exports = {
       },
     },
     {
-      resolve: "gatsby-source-filesystem",
+      resolve: "gatsby-plugin-root-import",
       options: {
-        path: `${__dirname}/src/images`,
-        name: "images",
+        src: path.join(__dirname, "src"),
+
+        app: path.join(__dirname, "src/app"),
+        components: path.join(__dirname, "src/components"),
+        data: path.join(__dirname, "src/data"),
+        helpers: path.join(__dirname, "src/helpers"),
+        images: path.join(__dirname, "src/images"),
+        styles: path.join(__dirname, "src/styles"),
       },
     },
+    "gatsby-plugin-styled-components",
+    "gatsby-plugin-react-helmet",
     "gatsby-plugin-sharp",
     "gatsby-transformer-sharp",
     {
       resolve: "gatsby-transformer-remark",
       options: {
         plugins: [
-          {
-            resolve: "gatsby-remark-relative-images",
-            options: {
-              name: "uploads",
-            },
-          },
+          `gatsby-remark-relative-images`,
           {
             resolve: "gatsby-remark-images",
             options: {
