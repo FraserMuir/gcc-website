@@ -16,7 +16,7 @@ photos:
   - date: 2020-05-11T23:00:00.000Z
     photo: /media/box-packing-volunteers.jpg
     caption: Volunteers packing veg boxes for community
-    position: top
+    position: bottom
   - date: 2020-12-24T00:00:00.000Z
     photo: /media/cheque-presentation-to-garelochhead-community-council-2096-.jpg
     caption: "Members of The Gibson Benevolent Trust donation "
@@ -24,7 +24,7 @@ photos:
   - date: 2019-12-01T00:00:00.000Z
     photo: /media/gcc-xmas-tree-marines-2019.jpg
     caption: Marines putting up Garelochhead's Christmas Tree
-    position: top
+    position: bottom
   - date: 2020-06-03T23:00:00.000Z
     photo: /media/covid-bags-june-2020.jpg
     caption: "Masks, information, fruit and veg bags being prepared "
