@@ -16,7 +16,7 @@ photos:
   - date: 2020-05-11T23:00:00.000Z
     photo: /media/box-packing-volunteers.jpg
     caption: Volunteers packing veg boxes for community
-    position: top
+    position: bottom
   - date: 2020-12-24T00:00:00.000Z
     photo: /media/cheque-presentation-to-garelochhead-community-council-2096-.jpg
     caption: "Members of The Gibson Benevolent Trust donation "
