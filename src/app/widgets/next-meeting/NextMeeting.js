@@ -16,7 +16,7 @@ export const NextMeeting = ({ frontmatter }) => {
   return (
     <StyledWidget>
       <Image imageData={image} />
-      <h3>Next Meeting</h3>
+      <div className="title">Next Meeting</div>
       <div className="footer">
         <div className="date">
           <h3>{moment(date).format("MMMM")}</h3>
@@ -65,7 +65,7 @@ const StyledWidget = styled.div`
     }
   }
 
-  & > h3 {
+  & > .title {
     position: absolute;
     width: 100%;
     text-align: center;
