@@ -3,12 +3,28 @@ templateKey: news
 type: page
 image: /media/snowy.jpg
 welcomeWidget:
-  heading: News
+  heading: COVID-19
   body: >-
-    We would like to help support local businesses and help residents find what
-    they need as local as possible. We are hoping to put together a list of
-    links for local business pages & contact details. 
+    Please see below some information you may find helpful.
 
 
-    We will be using our own local knowledge within the Community Council but please do get in touch if you are a business working within the local area. You can email via the contact us section, or via facebook or Instagram DM.
+    [Scottish Government Guidance Leaflet on Covid Restrictions](https://www.gov.scot/binaries/content/documents/govscot/publications/factsheet/2021/01/coronavirus-covid-19-stay-at-home-infographic/documents/stay-at-home-infographic/stay-at-home-infographic/govscot%3Adocument/Stay%2Bat%2BHome%2Binfographic%2B-%2B19%2BJanuary%2B2021.pdf)
+
+
+    [Covid-19 Contact Tracing Explained](https://www.alliance-scotland.org.uk/blog/news/covid-19-contact-tracing-explained/)
+
+
+    [Argyll and Bute Flexible Food Fund](https://www.argyll-bute.gov.uk/forms/flexible-food-fund)
+
+
+    [Vaccination Questions & Answers (updated 10th Feb)](https://www.argyll-bute.gov.uk/vaccination-questions-and-answers)
+
+
+    [Public Transport to/from vaccination locations](https://www.travelinescotland.com/vaccination)
+
+
+    [Play Scotland - Play well pack](https://www.playscotland.org/play-well-pack/)
+
+
+    [Support for local businesses](https://www.argyll-bute.gov.uk/coronavirus-information-businesses)
 ---
