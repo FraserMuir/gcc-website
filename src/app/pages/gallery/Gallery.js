@@ -15,19 +15,21 @@ import { Layout } from "components/Layout";
 import { Image } from "components/Image";
 
 import { SinglePhoto } from "./SinglePhoto";
+import { Title } from "components/Title";
 
 export const Gallery = ({ frontmatter, preview }) => {
   useScrollRestoration("gallery-scroll");
 
   const params = parse(typeof window !== "undefined" ? window?.location?.search : "");
 
-  const { image, photos } = frontmatter || {};
+  const { image, photos, title } = frontmatter || {};
 
   const photo = photos.find((p) => p.photo?.name?.toLowerCase() === params?.photo?.toLowerCase());
 
   return (
     <Layout preview={preview} image={image}>
       {photo?.photo?.name && <SinglePhoto {...photo} scrollY={window.scrollY} />}
+      <Title title={title} />
       <StyledLayout>
         <Masonry breakpointCols={{ default: 3, 850: 2, 550: 1 }} className="grid" columnClassName="grid-column">
           {(photos || []).map((photo, i) => (
@@ -41,6 +43,10 @@ export const Gallery = ({ frontmatter, preview }) => {
 
 const StyledLayout = styled.div`
   width: 100%;
+  @media ${device.mobile} {
+    background: ${colors.white};
+    padding: 1.5rem;
+  }
   & > .grid {
     display: flex;
     margin-left: -1.5rem;
@@ -109,9 +115,6 @@ const StyledPhoto = styled.div`
     overflow: hidden;
     display: flex;
     position: relative;
-    @media ${device.mobile} {
-      border-radius: 0;
-    }
 
     & > .image {
       width: 100%;

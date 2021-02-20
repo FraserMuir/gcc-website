@@ -3,6 +3,7 @@ import moment from "moment";
 import styled from "styled-components";
 import { colors } from "styles/colors";
 import { fonts } from "styles/fonts";
+import { device } from "styles/breakpoints";
 
 export const HistoricalMeetings = ({ frontmatter }) => {
   let { meetings } = frontmatter || {};
@@ -36,6 +37,10 @@ const StyledContainer = styled.div`
   background: ${colors.white};
   border-radius: 0.3em;
   box-shadow: 0 3px 6px 1px rgba(0, 0, 0, 0.1), 0 5px 15px 4px rgba(0, 0, 0, 0.1);
+  @media ${device.mobile} {
+    border-radius: none;
+    box-shadow: none;
+  }
 `;
 
 const Year = ({ year, items, index }) => {
@@ -94,8 +99,7 @@ const StyledYear = styled.div`
   width: 100%;
   overflow: hidden;
   max-height: ${(props) => props.maxheight}px;
-  will-change: height, max-height;
-  transform: translate3d(0, 0, 10px);
+  will-change: max-height;
   transition: max-height 0.2s;
   &:not(:last-child) {
     border-bottom: 1px solid rgba(0, 0, 0, 0.125);

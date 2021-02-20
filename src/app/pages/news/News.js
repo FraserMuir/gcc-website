@@ -6,21 +6,27 @@ import { fonts } from "styles/fonts";
 import { colors } from "styles/colors";
 import { device } from "styles/breakpoints";
 import { Markdown } from "components/Markdown";
+import { Title } from "components/Title";
 
 export const News = ({ frontmatter, preview }) => {
-  const { image, welcomeWidget } = frontmatter || {};
-  const { heading, body } = welcomeWidget || {};
+  const { image, title, items } = frontmatter || {};
 
   return (
     <Layout preview={preview} image={image}>
-      <StyledNewsCard>
-        <div className="heading">
-          <hr />
-          <h1>{heading}</h1>
-          <hr />
-        </div>
-        <Markdown content={body} />
-      </StyledNewsCard>
+      <Title title={title} />
+      {items.map((item, i) => {
+        const { heading, body } = item || {};
+        return (
+          <StyledNewsCard key={i}>
+            <div className="heading">
+              <hr />
+              <h1>{heading}</h1>
+              <hr />
+            </div>
+            <Markdown content={body} />
+          </StyledNewsCard>
+        );
+      })}
     </Layout>
   );
 };
@@ -65,7 +71,6 @@ const StyledNewsCard = styled.div`
   & > .markdown {
     padding: 1em 2em 0;
     margin: auto;
-    text-align: center;
     @media ${device.mobile} {
       padding: 0;
     }

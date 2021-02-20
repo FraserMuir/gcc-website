@@ -13,6 +13,7 @@ export const pageQuery = graphql`
   query HistoricalMeetingsPage($slug: String) {
     markdownRemark(fields: { slug: { eq: $slug } }) {
       frontmatter {
+        title
         image {
           childImageSharp {
             fluid(maxWidth: 1500, quality: 40) {

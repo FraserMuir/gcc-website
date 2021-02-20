@@ -86,6 +86,7 @@ collections:
         fields:
           - { label: "Template Key", name: templateKey, widget: "hidden", default: "historical-meetings" }
           - { label: "Type", name: type, widget: "hidden", default: "page" }
+          - { label: "Title", name: title, widget: "string" }
           - { label: "Main Image", name: image, widget: image }
       - file: "src/app/pages/gallery/index.md"
         label: "Gallery"
@@ -93,6 +94,7 @@ collections:
         fields:
           - { label: "Template Key", name: templateKey, widget: "hidden", default: "gallery" }
           - { label: "Type", name: type, widget: "hidden", default: "page" }
+          - { label: "Title", name: title, widget: "string" }
           - { label: "Main Image", name: image, widget: image }
           - {
               label: "Photos",
@@ -116,37 +118,58 @@ collections:
         fields:
           - { label: "Template Key", name: templateKey, widget: "hidden", default: "links" }
           - { label: "Type", name: type, widget: "hidden", default: "page" }
+          - { label: "Title", name: title, widget: "string" }
           - { label: "Main Image", name: image, widget: image }
-          - { label: "Links Widget", name: welcomeWidget, widget: object, fields: [{ label: Heading, name: heading, widget: string }, { label: Body, name: body, widget: markdown }] }
+          - { label: Body, name: body, widget: markdown }
       - file: "src/app/pages/events/index.md"
         label: "Events"
         name: "events"
         fields:
           - { label: "Template Key", name: templateKey, widget: "hidden", default: "events" }
           - { label: "Type", name: type, widget: "hidden", default: "page" }
+          - { label: "Title", name: title, widget: "string" }
           - { label: "Main Image", name: image, widget: image }
-          - { label: "Events Widget", name: welcomeWidget, widget: object, fields: [{ label: Heading, name: heading, widget: string }, { label: Body, name: body, widget: markdown }] }
+          - {
+              label: "Events",
+              name: items,
+              widget: list,
+              add_to_top: true,
+              label_singular: "Event",
+              summary: "{{heading}}",
+              fields: [{ label: Heading, name: heading, widget: string }, { label: Body, name: body, widget: markdown }],
+            }
       - file: "src/app/pages/news/index.md"
         label: "News"
         name: "news"
         fields:
           - { label: "Template Key", name: templateKey, widget: "hidden", default: "news" }
           - { label: "Type", name: type, widget: "hidden", default: "page" }
+          - { label: "Title", name: title, widget: "string" }
           - { label: "Main Image", name: image, widget: image }
-          - { label: "News Widget", name: welcomeWidget, widget: object, fields: [{ label: Heading, name: heading, widget: string }, { label: Body, name: body, widget: markdown }] }
+          - {
+              label: "News Items",
+              name: items,
+              widget: list,
+              add_to_top: true,
+              label_singular: "News Item",
+              summary: "{{heading}}",
+              fields: [{ label: Heading, name: heading, widget: string }, { label: Body, name: body, widget: markdown }],
+            }
       - file: "src/app/pages/about-us/index.md"
         label: "About Us"
         name: "about-us"
         fields:
           - { label: "Template Key", name: templateKey, widget: "hidden", default: "about-us" }
           - { label: "Type", name: type, widget: "hidden", default: "page" }
+          - { label: "Title", name: title, widget: "string" }
           - { label: "Main Image", name: image, widget: image }
-          - { label: "About Us", name: welcomeWidget, widget: object, fields: [{ label: Heading, name: heading, widget: string }, { label: Body, name: body, widget: markdown }] }
+          - { label: Body, name: body, widget: markdown }
       - file: "src/app/pages/contact-us/index.md"
         label: "Contact Us"
         name: "contact-us"
         fields:
           - { label: "Template Key", name: templateKey, widget: "hidden", default: "contact-us" }
           - { label: "Type", name: type, widget: "hidden", default: "page" }
+          - { label: "Title", name: title, widget: "string" }
           - { label: "Main Image", name: image, widget: image }
-          - { label: "Contact Us", name: welcomeWidget, widget: object, fields: [{ label: Heading, name: heading, widget: string }, { label: Body, name: body, widget: markdown }] }
+          - { label: Body, name: body, widget: markdown }

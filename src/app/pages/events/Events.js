@@ -2,25 +2,31 @@ import React from "react";
 import styled from "styled-components";
 
 import { Layout } from "components/Layout";
-import { fonts } from "styles/fonts";
 import { colors } from "styles/colors";
 import { device } from "styles/breakpoints";
 import { Markdown } from "components/Markdown";
+import { Title } from "components/Title";
+import { fonts } from "styles/fonts";
 
 export const Events = ({ frontmatter, preview }) => {
-  const { image, welcomeWidget } = frontmatter || {};
-  const { heading, body } = welcomeWidget || {};
+  const { image, title, items } = frontmatter || {};
 
   return (
     <Layout preview={preview} image={image}>
-      <StyledEventsCard>
-        <div className="heading">
-          <hr />
-          <h1>{heading}</h1>
-          <hr />
-        </div>
-        <Markdown content={body} />
-      </StyledEventsCard>
+      <Title title={title} />
+      {items.map((item, i) => {
+        const { heading, body } = item || {};
+        return (
+          <StyledEventsCard key={i}>
+            <div className="heading">
+              <hr />
+              <h1>{heading}</h1>
+              <hr />
+            </div>
+            <Markdown content={body} />
+          </StyledEventsCard>
+        );
+      })}
     </Layout>
   );
 };

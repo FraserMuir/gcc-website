@@ -26,10 +26,27 @@ const StyledLayout = styled.div`
     & > :last-child {
       margin-bottom: 3em;
     }
+    @media ${device.laptop} {
+      max-width: 97%;
+      & > * {
+        margin-top: 2.25em;
+      }
+    }
+    @media ${device.tablet} {
+      max-width: 98%;
+      & > * {
+        margin-top: 1.75em;
+      }
+    }
+    @media ${device.tablet} {
+      & > * {
+        margin-top: 1.25em;
+      }
+    }
     @media ${device.mobile} {
       max-width: 100%;
       & > * {
-        margin-top: 2em;
+        margin-top: 1em;
       }
       & > :first-child {
         margin-top: 0;

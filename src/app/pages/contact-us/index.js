@@ -13,6 +13,7 @@ export const pageQuery = graphql`
   query ContactUsPage($slug: String) {
     markdownRemark(fields: { slug: { eq: $slug } }) {
       frontmatter {
+        title
         image {
           childImageSharp {
             fluid(maxWidth: 1500, quality: 40) {
@@ -20,10 +21,7 @@ export const pageQuery = graphql`
             }
           }
         }
-        welcomeWidget {
-          heading
-          body
-        }
+        body
       }
     }
   }

@@ -19,7 +19,7 @@ export const NextMeeting = ({ frontmatter }) => {
       <div className="title">Next Meeting</div>
       <div className="footer">
         <div className="date">
-          <h3>{moment(date).format("MMMM")}</h3>
+          <div>{moment(date).format("MMMM")}</div>
           <p>{moment(date).format("Do")}</p>
         </div>
         <div className="info">
@@ -120,7 +120,7 @@ const StyledWidget = styled.div`
       @media ${device.tablet} {
         padding: 0 0.7rem;
       }
-      h3 {
+      div {
         margin: 0;
         color: white;
         text-transform: capitalize;

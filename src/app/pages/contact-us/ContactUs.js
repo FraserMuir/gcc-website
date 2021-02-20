@@ -2,23 +2,18 @@ import React from "react";
 import styled from "styled-components";
 
 import { Layout } from "components/Layout";
-import { fonts } from "styles/fonts";
 import { colors } from "styles/colors";
 import { device } from "styles/breakpoints";
 import { Markdown } from "components/Markdown";
+import { Title } from "components/Title";
 
 export const ContactUs = ({ frontmatter, preview }) => {
-  const { image, welcomeWidget } = frontmatter || {};
-  const { heading, body } = welcomeWidget || {};
+  const { image, title, body } = frontmatter || {};
 
   return (
     <Layout preview={preview} image={image}>
+      <Title title={title} />
       <StyledContactUsCard>
-        <div className="heading">
-          <hr />
-          <h1>{heading}</h1>
-          <hr />
-        </div>
         <Markdown content={body} />
       </StyledContactUsCard>
     </Layout>
@@ -35,31 +30,6 @@ const StyledContactUsCard = styled.div`
     box-shadow: none;
     border-radius: 0;
     padding: 1.5rem 1rem 1rem;
-  }
-  & > .heading {
-    display: flex;
-    align-items: center;
-    width: 80%;
-    @media ${device.mobile} {
-      width: 100%;
-    }
-    margin: auto;
-    & > hr {
-      border: none;
-      outline: none;
-      width: 100%;
-      height: 2px;
-      flex: 1;
-      background: ${colors.darkBlue};
-    }
-    & > h1 {
-      color: ${colors.darkBlue};
-      font-family: ${fonts.serif};
-      text-transform: uppercase;
-      font-weight: normal;
-      margin: 0 1em;
-      font-size: 1.9em;
-    }
   }
 
   & > .markdown {

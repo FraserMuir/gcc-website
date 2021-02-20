@@ -23,6 +23,7 @@ const StyledFooter = styled.footer`
       align-items: center;
       & > .buttons {
         display: flex;
+        flex-wrap: wrap;
         & > a {
           white-space: nowrap;
           margin-right: 1rem;
@@ -34,6 +35,7 @@ const StyledFooter = styled.footer`
           font-size: 0.7rem;
           text-transform: uppercase;
           transition: border 0.2s;
+          margin-bottom: 0.5rem;
           &:hover {
             border: 2px solid ${colors.veryLightGrey};
           }
