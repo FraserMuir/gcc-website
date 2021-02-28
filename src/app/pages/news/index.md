@@ -1,9 +1,11 @@
 ---
 templateKey: news
 type: page
-image: /media/snowy.jpg
 title: News
+image: /media/snowy.jpg
 items:
+  - heading: LOCAL EVENTS
+    body: "![](/media/mindfulness-details.jpg)"
   - heading: COVID-19
     body: >-
       Please see below some information you may find helpful.
