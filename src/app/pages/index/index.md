@@ -24,8 +24,8 @@ welcomeWidget:
     path: about-us
 linksWidget:
   - heading: News
-    blurb: Want to know the latest news about Garelochhead? Head on over to our News
-      Page
+    blurb: Latest local updates include the bookable bus survey, Mindfullness and
+      Covid-19 information
     image: /media/reporters.png
     path: news
   - heading: Meetings
@@ -34,8 +34,8 @@ linksWidget:
     image: /media/meetings.png
     path: next-meeting
   - heading: Links
-    blurb: We're building a resource of information all about Garelochhead - useful
-      links for residents and visitors
+    blurb: Here you will find you local bin collection calendar, Rural Watch, Bus
+      timetables and more
     image: /media/information.png
     path: links
 ---
