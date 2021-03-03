@@ -20,7 +20,7 @@ items:
 
 
       If you have any questions about the survey please contact communitydevelopment@argyll-bute.gov.uk.
-    heading: Bookable Bus Survey - Closing date 11th March 2021
+    heading: Bookable Bus Survey
   - heading: LOCAL EVENTS
     body: "![](/media/mindfulness-details.jpg)"
   - heading: COVID-19
