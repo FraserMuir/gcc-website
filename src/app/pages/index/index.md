@@ -34,7 +34,7 @@ linksWidget:
     image: /media/meetings.png
     path: next-meeting
   - heading: Links
-    blurb: Here you will find you local bin collection calendar, Rural Watch, Bus
+    blurb: Here you will find your local bin collection calendar, Rural Watch, Bus
       timetables and more
     image: /media/information.png
     path: links
