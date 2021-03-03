@@ -4,6 +4,23 @@ type: page
 title: News
 image: /media/snowy.jpg
 items:
+  - body: >-
+      Argyll and Bute Council would like to identify whether there is a need for
+      a bookable bus service to help people get to and from Covid-19 vaccination
+      appointments in the Helensburgh and Lomond area.
+
+
+      They would be grateful if you could take a few moments to complete the survey below to let them know if you would have a need for this service.
+
+
+      [Bookable Bus Service Survey](https://www.surveymonkey.co.uk/r/X9GJ7YS)
+
+
+      The survey will be open until Thursday 11th March 2021.
+
+
+      If you have any questions about the survey please contact communitydevelopment@argyll-bute.gov.uk.
+    heading: Bookable Bus Survey - Closing date 11th March 2021
   - heading: LOCAL EVENTS
     body: "![](/media/mindfulness-details.jpg)"
   - heading: COVID-19
