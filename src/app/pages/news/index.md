@@ -4,7 +4,7 @@ type: page
 title: News
 image: /media/snowy.jpg
 items:
-  - body: "![](https://www.friendsagainstscams.org.uk/training/friends-elearning)"
+  - body: "![Friends against scams training]()"
     heading: Friends against SCAMS
   - body: >-
       Argyll and Bute Council would like to identify whether there is a need for
