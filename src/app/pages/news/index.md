@@ -4,6 +4,8 @@ type: page
 title: News
 image: /media/snowy.jpg
 items:
+  - body: "![](https://www.friendsagainstscams.org.uk/training/friends-elearning)"
+    heading: Friends against SCAMS
   - body: >-
       Argyll and Bute Council would like to identify whether there is a need for
       a bookable bus service to help people get to and from Covid-19 vaccination
