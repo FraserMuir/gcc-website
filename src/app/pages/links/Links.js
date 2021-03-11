@@ -8,13 +8,13 @@ import { Markdown } from "components/Markdown";
 import { Title } from "components/Title";
 
 export const Links = ({ frontmatter, preview }) => {
-  const { image, title, body } = frontmatter || {};
+  const { image, title, content } = frontmatter || {};
 
   return (
     <Layout preview={preview} image={image}>
       <Title title={title} />
       <StyledLinksCard>
-        <Markdown content={body} />
+        <Markdown content={content} />
       </StyledLinksCard>
     </Layout>
   );
