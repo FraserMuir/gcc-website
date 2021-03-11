@@ -120,7 +120,7 @@ collections:
           - { label: "Type", name: type, widget: "hidden", default: "page" }
           - { label: "Title", name: title, widget: "string" }
           - { label: "Main Image", name: image, widget: image }
-          - { label: Body, name: body, widget: markdown }
+          - { label: Body, name: content, widget: markdown }
       - file: "src/app/pages/events/index.md"
         label: "Events"
         name: "events"
