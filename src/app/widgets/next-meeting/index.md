@@ -1,7 +1,7 @@
 ---
 type: widget
-date: 2021-03-16T19:00:24.809Z
+date: 2021-05-18T18:00:07.142Z
 string: Zoom meeting
-agenda: /media/agenda-16.3.21.docx
+agenda: /media/blank-agenda.pdf
 image: /media/next-meeting.jpg
 ---
