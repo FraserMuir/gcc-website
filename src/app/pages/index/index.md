@@ -24,8 +24,8 @@ welcomeWidget:
     path: about-us
 linksWidget:
   - heading: News
-    blurb: Latest local updates include the bookable bus survey, Mindfullness and
-      Covid-19 information
+    blurb: Latest local updates include our local litter heroes and Covid-19
+      information
     image: /media/reporters.png
     path: news
   - heading: Meetings
