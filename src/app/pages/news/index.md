@@ -4,6 +4,10 @@ type: page
 title: News
 image: /media/snowy.jpg
 items:
+  - heading: Village litter heroes
+    body: "[Click here to read a recent article in The Helensburgh
+      Advertiser](https://www.helensburghadvertiser.co.uk/news/19179120.gareloc\
+      hhead-community-councils-message-thanks-villages-litter-heroes/)"
   - heading: vaccine update
     body: >-
       <!--StartFragment-->
