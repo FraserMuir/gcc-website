@@ -24,8 +24,8 @@ welcomeWidget:
     path: about-us
 linksWidget:
   - heading: News
-    blurb: Latest local updates include our local litter heroes and Covid-19
-      information
+    blurb: Where you will find local updates and can read our novel The Doomed
+      Village!
     image: /media/reporters.png
     path: news
   - heading: Meetings
