@@ -4,6 +4,18 @@ type: page
 title: News
 image: /media/snowy.jpg
 items:
+  - body: >-
+      [The Doomed
+      Village](static/media/garelochdown-the-doomed-village-blank-front.pdf) is
+      a novel written during lockdown by members of Garelochhead Community
+      Council. 
+
+
+      You can read the novel by [clicking here](static/media/garelochdown-the-doomed-village-blank-front.pdf) and we really hope you enjoy it. 
+
+
+      Of course it is entirely fictional...or is it??
+    heading: The Doomed Village
   - heading: COVID-19
     body: >-
       Please see below some information you may find helpful.
