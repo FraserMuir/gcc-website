@@ -4,6 +4,25 @@ type: page
 title: News
 image: /media/snowy.jpg
 items:
+  - heading: Vaccine update
+    body: >-
+      We have received an updated from the Garelochhead Medical Centre. Please
+      see below:
+
+
+
+
+      90% of patients ages 75 and over have had both vaccines with the remainder booked for a future appt to have their 2nd dose
+
+      85.5% of patients aged 70-74 have had both vaccines with the remainder booked for a future appt to have their 2nd dose.
+
+      85.7% of patients who are shielders have had both vaccines with the remainder booked for a future appt to have their 2nd dose
+
+
+      Most of the 50-69 year old have had at least 1 vaccine and will be contacted when the time comes for their 2nd vaccine.
+
+
+      We are aware that the media is reporting that 45-49 are due to be vaccinated.  We are not at that stage yet, it would be very helpful if ANYONE under the age of 50,   DOES NOT contact the surgery to query this.  We will be calling patients when the time comes for these clinics to be arranged.
   - body: >-
       [The Doomed
       Village](static/media/garelochdown-the-doomed-village-blank-front.pdf) is
