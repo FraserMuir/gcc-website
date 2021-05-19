@@ -25,15 +25,15 @@ items:
       We are aware that the media is reporting that 45-49 are due to be vaccinated.  We are not at that stage yet, it would be very helpful if ANYONE under the age of 50,   DOES NOT contact the surgery to query this.  We will be calling patients when the time comes for these clinics to be arranged.
   - body: >-
       [The Doomed
-      Village](static/media/garelochdown-the-doomed-village-blank-front.pdf) is
-      a novel written during lockdown by members of Garelochhead Community
+      Village](https://garelochhead.info/media/garelochdown-the-doomed-village-blank-front.pdf)
+      is a novel written during lockdown by members of Garelochhead Community
       Council. 
 
 
-      You can read the novel by [clicking here](static/media/garelochdown-the-doomed-village-blank-front.pdf) and we really hope you enjoy it. 
+      You can read the novel by [clicking here](https://garelochhead.info/media/garelochdown-the-doomed-village-blank-front.pdf) and we really hope you enjoy it. 
 
 
-      Of course it is entirely fictional...or is it??
+      Of course it is entirely fictional... or is it??
     heading: The Doomed Village
   - heading: COVID-19
     body: >-
