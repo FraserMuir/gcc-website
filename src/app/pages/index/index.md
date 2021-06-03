@@ -29,8 +29,9 @@ linksWidget:
     image: /media/reporters.png
     path: news
   - heading: Meetings
-    blurb: Here you can find out what's been discussed at Community Council
-      meetings, and what's on the agenda for the next meeting
+    blurb: |-
+      Our AGM is on 15th June at 7pm. 
+      Contact Secretary for meeting joining information
     image: /media/meetings.png
     path: next-meeting
   - heading: Links
