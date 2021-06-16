@@ -14,7 +14,7 @@ welcomeWidget:
     You will find information for all our meetings and important dates.  We endeavour to include up to date information that we hope might benefit residents and visitors alike.
 
 
-    Please also click here for details of our Community Council Helpline.
+    Please also [click here](static/media/helpline-leaflet-gcc.docx) for details of our Community Council Helpline.
   signature: The Community Council
   link:
     text: About Us
