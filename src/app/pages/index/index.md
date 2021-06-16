@@ -29,14 +29,11 @@ linksWidget:
     image: /media/reporters.png
     path: news
   - heading: Meetings
-    blurb: |-
-      Our AGM is on 15th June at 7pm. 
-      Contact Secretary for meeting joining information
+    blurb: "Please see the Events section for 2021/22 meeting dates. "
     image: /media/meetings.png
     path: next-meeting
   - heading: Links
-    blurb: Here you will find your local bin collection calendar, Top Tips against
-      scams, Bus timetables and more
+    blurb: Click here for local information and details of the GCC Helpline
     image: /media/information.png
     path: links
 ---
