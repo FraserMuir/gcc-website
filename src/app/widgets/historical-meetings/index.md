@@ -1,6 +1,20 @@
 ---
 type: widget
 meetings:
+  - date: 2021-06-15T17:55:19.012Z
+    file: /media/gcc-2021-06-15-meeting-minutes.pdf
+  - date: 2021-05-25T17:54:48.061Z
+    file: /media/gcc-2021-05-25-meeting-minutes.pdf
+  - date: 2021-03-16T18:54:35.344Z
+    file: /media/gcc-2021-03-16-meeting-minutes.pdf
+  - date: 2021-01-19T18:54:17.713Z
+    file: /media/gcc-2021-01-19-meeting-minutes.pdf
+  - date: 2020-11-17T18:54:03.000Z
+    file: /media/gcc-2020-11-17-meeting-minutes.pdf
+  - date: 2020-09-15T17:53:47.040Z
+    file: /media/gcc-2020-09-15-meeting-minutes.pdf
+  - date: 2020-08-18T17:52:57.564Z
+    file: /media/gcc-2020-08-18-meeting-minutes.pdf
   - date: 1999-11-18T01:03:54.733Z
     file: /media/GCC-1999-11-18-Meeting-Minutes.pdf
   - date: 2014-01-15T01:03:54.733Z
