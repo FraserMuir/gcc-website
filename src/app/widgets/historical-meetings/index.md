@@ -1,6 +1,8 @@
 ---
 type: widget
 meetings:
+  - date: 2021-08-17T16:46:40.936Z
+    file: /media/gcc-2021-08-17-meeting-minutes.pdf
   - date: 2021-06-15T17:55:19.012Z
     file: /media/gcc-2021-06-15-meeting-minutes.pdf
   - date: 2021-05-25T17:54:48.061Z
