@@ -19,7 +19,7 @@ const query = graphql`
   }
 `;
 
-export const SEO = () => {
+export const Seo = () => {
   const { site } = useStaticQuery(query);
   const { name, url, title, locale, description, twitterUsername } = site.siteMetadata;
 

@@ -1,16 +1,16 @@
 import React from "react";
 import { graphql } from "gatsby";
 
-import { HistoricalMeetings } from "./HistoricalMeetings";
+import { Post } from "./Post";
 
-const HistoricalMeetingsPage = ({ data: { markdownRemark } }) => {
-  return <HistoricalMeetings {...markdownRemark} />
+const PostPage = ({ data: { markdownRemark } }) => {
+  return <Post {...markdownRemark} />;
 };
 
-export default HistoricalMeetingsPage;
+export default PostPage;
 
 export const pageQuery = graphql`
-  query HistoricalMeetingsPage($slug: String) {
+  query PostPage($slug: String) {
     markdownRemark(fields: { slug: { eq: $slug } }) {
       frontmatter {
         title
@@ -21,6 +21,7 @@ export const pageQuery = graphql`
             }
           }
         }
+        body
       }
     }
   }
