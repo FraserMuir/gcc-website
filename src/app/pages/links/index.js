@@ -1,16 +1,16 @@
 import React from "react";
 import { graphql } from "gatsby";
 
-import { Posts } from "./Posts";
+import { Links } from "./Links";
 
-const PostsPage = ({ data: { markdownRemark } }) => {
-  return <Posts {...markdownRemark} />;
+const LinksPage = ({ data: { markdownRemark } }) => {
+  return <Links {...markdownRemark} />;
 };
 
-export default PostsPage;
+export default LinksPage;
 
 export const pageQuery = graphql`
-  query PostsPage($slug: String) {
+  query LinksPage($slug: String) {
     markdownRemark(fields: { slug: { eq: $slug } }) {
       frontmatter {
         title
@@ -21,7 +21,7 @@ export const pageQuery = graphql`
             }
           }
         }
-        body
+        content
       }
     }
   }

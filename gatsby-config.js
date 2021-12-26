@@ -2,11 +2,12 @@ const path = require("path");
 
 module.exports = {
   siteMetadata: {
-    name: "Bejant Observer",
-    title: "Bejant Observer",
-    url: "https://bejantobserver.com",
-    description: "The alternative independent voice of St Andrews students for a really long time",
-    twitterUsername: "@BejantObserver",
+    name: "Garelochhead Community Council",
+    title: "Garelochhead Community Council | Official Website",
+    url: "https://garelochhead.info",
+    description:
+      "On these pages, we aim to offer easy access to the recent and current activities of the Garelochhead Community Council, as well as useful links to what’s happening in general in and around Garelochhead. Our features include: Business Listings, Past Meeting's Minutes and Current News.",
+    twitterUsername: "@GarelochheadCC",
     locale: "en_GB",
   },
   flags: {
@@ -32,6 +33,13 @@ module.exports = {
       resolve: "gatsby-source-filesystem",
       options: {
         path: `${__dirname}/src/app/pages`,
+        name: "app",
+      },
+    },
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        path: `${__dirname}/src/app/widgets`,
         name: "app",
       },
     },

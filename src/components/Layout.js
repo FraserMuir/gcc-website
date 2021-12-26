@@ -6,7 +6,7 @@ import { GlobalStyle } from "styles/global";
 import { Footer } from "./Footer";
 import { Image } from "./Image";
 import { Navbar } from "./Navbar";
-import { Seo } from "./SEO";
+import { SEO } from "./SEO";
 
 const StyledLayout = styled.div`
   width: 100%;
@@ -64,7 +64,7 @@ const StyledLayout = styled.div`
 export const Layout = ({ preview, children, image }) => {
   return (
     <StyledLayout>
-      {!preview && <Seo />}
+      {!preview && <SEO />}
       <GlobalStyle />
       <Navbar />
       <div>

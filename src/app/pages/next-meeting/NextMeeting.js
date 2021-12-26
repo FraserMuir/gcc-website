@@ -1,13 +1,13 @@
 import React from "react";
-
 import { Layout } from "components/Layout";
+import { NextMeetingWidget } from "app/widgets/next-meeting";
 
-export const Posts = ({ frontmatter, preview }) => {
+export const NextMeeting = ({ frontmatter, preview }) => {
   const { image } = frontmatter || {};
-  console.log(frontmatter);
+
   return (
     <Layout preview={preview} image={image}>
-      <h1>Posts</h1>
+      {!preview && <NextMeetingWidget />}
     </Layout>
   );
 };

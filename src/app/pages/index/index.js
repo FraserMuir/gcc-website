@@ -20,6 +20,27 @@ export const pageQuery = graphql`
             }
           }
         }
+        welcomeWidget {
+          heading
+          body
+          signature
+          link {
+            path
+            text
+          }
+        }
+        linksWidget {
+          heading
+          blurb
+          image {
+            childImageSharp {
+              fluid(maxWidth: 320, quality: 100) {
+                ...GatsbyImageSharpFluid
+              }
+            }
+          }
+          path
+        }
       }
     }
   }
